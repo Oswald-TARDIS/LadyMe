@@ -1,6 +1,7 @@
 body{
 	margin: 0px;
 	font-family:Microsoft YaHei;
+	height:2000px;
 }
 #div_guide{
 	height:30px;
@@ -19,6 +20,26 @@ body{
 	cursor:pointer;
 }
 #div_guide:ACTIVE{
+	background: #1044bc;
+	cursor:pointer;
+}
+#div_guide_right{
+	height:30px;
+	width:100px;
+	text-align:center;
+	line-height:30px;
+	float:right;
+	background: #444;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
+}
+#div_guide_right:hover{
+	background: #3169ee;
+	cursor:pointer;
+}
+#div_guide_right:ACTIVE{
 	background: #1044bc;
 	cursor:pointer;
 }
@@ -45,7 +66,10 @@ body{
 	line-height:30px;
 	font-size:15px;
 	box-shadow:1px 1px 1px #888;
-	
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
 }
 .font_text{
 	font-size: 20px;
@@ -83,4 +107,72 @@ body{
 	-moz-transition: all 0.2s;	/* Firefox 4 */
 	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
 	-o-transition: all 0.2s;	/* Opera */
+}
+#div_login{
+	width:110px;
+	background:#fff;
+	border-radius:20px;
+	-moz-border-radius:20px; /* Old Firefox */
+	text-align:center;
+	line-height:30px;
+	height: 30px;
+	font-size: 20px;
+	background:#3169ee;
+	color:#fff;
+}
+#div_login:HOVER{
+	cursor:pointer
+}
+#div_register{
+	width:110px;
+	background:#fff;
+	border-radius:20px;
+	-moz-border-radius:20px; /* Old Firefox */
+	text-align:center;
+	line-height:30px;
+	height: 30px;
+	font-size: 20px;
+	background:#ec9640;
+	color:#fff;
+}
+#div_register:HOVER{
+	cursor:pointer
+}
+#div_usign{
+	width:100%;
+	height:200px;
+	background: #fff; 
+	z-index: 1;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
+}
+#div_band{
+	width:100%;
+	height: 400px;
+	background: #aaa;
+	
+}
+#cover{
+	z-index: 2;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
+	position: relative;
+	bottom: 0px;
+}
+#su{
+	font-size:20px;
+	color:#3169ee;
+	opacity:0;
+	margin-bottom:5px;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
+}
+#su:HOVER{
+	cursor:pointer;
 }
