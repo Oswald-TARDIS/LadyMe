@@ -1,28 +1,86 @@
 body{
 	margin: 0px;
+	font-family:Microsoft YaHei;
+}
+#div_guide{
+	height:30px;
+	width:100px;
+	text-align:center;
+	line-height:30px;
+	float: left;
+	background: #444;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
+}
+#div_guide:hover{
+	background: #3169ee;
+	cursor:pointer;
+}
+#div_guide:ACTIVE{
+	background: #1044bc;
+	cursor:pointer;
+}
+#div_guide_now{
+	height:30px;
+	width:100px;
+	text-align:center;
+	line-height:30px;
+	float: left;
+	background: #3169ee;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
+}
+.guide_ahref:VISITED{
+	color:#fff;
 }
 #div_head{
+	height:30px;
+	width:100%;
+	background: #444;
+	color:#fff;
+	line-height:30px;
+	font-size:15px;
+	box-shadow:1px 1px 1px #888;
 	
 }
 .font_text{
-	
+	font-size: 20px;
 }
 .font_title{
-	
+	font-size:25px;
 }
 .font_ahref:link {
-	color:#aaa;
  	text-decoration: none;
+ 	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
 }
 .font_ahref:visited {
  	text-decoration: none;
+ 	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
 }
 .font_ahref:hover {
- 	color:#EE9A49;
+ 	color:#3169ee;  
  	cursor:pointer;
  	text-decoration: none;
+ 	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
 }
 .font_ahref:active {
- 	color:#EE7600;  
+ 	color:#1044bc;
  	text-decoration: none;
+ 	transition: all 0.2s;
+	-moz-transition: all 0.2s;	/* Firefox 4 */
+	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
+	-o-transition: all 0.2s;	/* Opera */
 }

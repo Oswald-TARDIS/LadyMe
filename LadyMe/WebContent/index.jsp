@@ -8,7 +8,15 @@
 <title>LadyMe</title>
 </head>
 <body>
-<center><h1>共享工程URI:https://github.com/Oswald-TARDIS/LadyMe.git</h1></center>
+<div id=div_head>
+	<a href=index.jsp class=guide_ahref><div id=div_guide_now>首页</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>首页</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>首页</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>首页</div></a>
+</div>
+<center><font class=font_title>共享工程</font><br>
+<font class=font_text>URI:https://github.com/Oswald-TARDIS/LadyMe.git</h1></font>
 <a class=font_ahref>测试超链接</a>
+</center>
 </body>
 </html>
