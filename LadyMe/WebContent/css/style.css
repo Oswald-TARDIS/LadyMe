@@ -1,0 +1,28 @@
+body{
+	margin: 0px;
+}
+#div_head{
+	
+}
+.font_text{
+	
+}
+.font_title{
+	
+}
+.font_ahref:link {
+	color:#aaa;
+ 	text-decoration: none;
+}
+.font_ahref:visited {
+ 	text-decoration: none;
+}
+.font_ahref:hover {
+ 	color:#EE9A49;
+ 	cursor:pointer;
+ 	text-decoration: none;
+}
+.font_ahref:active {
+ 	color:#EE7600;  
+ 	text-decoration: none;
+}
