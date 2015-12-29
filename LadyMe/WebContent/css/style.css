@@ -1,6 +1,8 @@
 body{
 	margin: 0px;
 	font-family:Microsoft YaHei,Î¢ÈíÑÅºÚ,ºÚÌå;
+	background: #444;
+	height: 100%;
 }
 #div_guide{
 	height:50px;
@@ -161,6 +163,7 @@ body{
 	-o-transition: all 0.2s;	/* Opera */
 	position: relative;
 	bottom: 0px;
+	background: #fff;
 }
 #showBut{
 	width:20px;

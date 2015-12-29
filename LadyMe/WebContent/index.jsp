@@ -27,17 +27,18 @@
 	<a href=index.jsp class=guide_ahref><div id=div_guide>供求信息</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>
-		<img src="img/userIco/default.png" style="width:40px;height: 40px;float:left;margin-left:5px;margin-top:3px;"/>${user.name }
+		<img src="img/userIco/default.png" style="width:40px;height: 40px;float:left;margin-left:5px;margin-top:3px;"/>${user}
 	</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>会员中心</div></a>
 </div>
 </c:if>
 <c:if test="${user==null}">
+<div id=div_head></div>
 <div id=div_usign>
 	<center><div id=showBut onclick="showUsign()"><img src="img/down.png" style="width:20px;height:20px;position:absolute;z-index:1" /></div></center>
 	<center><div style="font-size: 30px;color:#3169ee;">赶快加入二蛋货运网!</div></center>
 	<center><table>
-	<tr><td><div id=div_register>注册</div></td><td><div id=div_login>登录</div></td></tr>
+	<tr><td><div id=div_register>注册</div></td><td><a href="login.jsp"><div id=div_login>登录</div></a></td></tr>
 	</table></center>
 	<center><div id=hideBut onclick="offUsign()"><img src="img/up.png" style="width:20px;height:20px;position:absolute;z-index:1" /></div></center>
 </div>
@@ -46,7 +47,6 @@
 	<div id="wrapper">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <img src="img/bank001.jpg" id=img_band alt=""  />
                 <img src="img/bank002.jpg" id=img_band alt="" title="This is an example of a caption" />
                 <img src="img/bank003.jpg" id=img_band alt="" data-transition="slideInLeft"/>
                 <img src="img/bank004.jpg" id=img_band alt=""  />
@@ -75,7 +75,7 @@
     	<div id=>
     		
     	</div>
-    	
+    		
     	<div id=>
     		
     	</div>
@@ -85,7 +85,7 @@
     	</div>
     </div>
     <div id=bottom>
-    	<p>联系我们</p>
+    	<center><p style="color:#fff;font-size: 25px;">联系我们</p></center>
     </div>
 </div>
 </body>
