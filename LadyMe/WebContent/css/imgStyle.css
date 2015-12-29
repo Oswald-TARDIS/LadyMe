@@ -32,6 +32,11 @@ aside, nav, article, figure {
 /*===================*/
 /*=== Main Styles ===*/
 /*===================*/
+body {
+	font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	color:#333;
+	background:#eee;
+}
 
 a, a:visited {
 	color:blue;
