@@ -10,14 +10,13 @@
 </head>
 <body>
 <div class=div_login>
-	<form action="" id="contact" >
+	<form action="UserController?action=logIn&type=司机" id="contact" method="post">
 
 		<!-- Logo, title and informative content -->
 
 		<h1 id="title">登陆</h1>
 		<!-- Form fields wrapper -->
 		<div id="wrapper" class="clearfix">
-
 			<!-- Name -->
 			<input type="text" class="has_icon" name="name" placeholder="用户名" required>
 			<div class="icon-user"></div>

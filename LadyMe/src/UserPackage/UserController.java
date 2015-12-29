@@ -13,9 +13,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
 
+import Bean.User;
 import sun.java2d.pipe.SpanShapeRenderer.Simple;
 import tools.DataBase;
 
@@ -52,8 +54,10 @@ public class UserController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String action = (String) request.getParameter("action");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String action = request.getParameter("action");
+		System.out.println(action);
 		try {
 			if (action.equals("signIn")) signIn(request, response);
 			if (action.equals("logIn")) logIn(request, response);
@@ -67,8 +71,29 @@ public class UserController extends HttpServlet {
 		}
 	}
 
-	private void logIn(HttpServletRequest request, HttpServletResponse response) {
+	private void logIn(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
+		String ID=request.getParameter("id");
+		String type = request.getParameter("type");
+		String pwd= request.getParameter("passwd");
+		ResultSet rs=null;
+		if(type.equals("Ë¾»ú")){
+			rs=db.query("c_user", "id",ID);
+		}else{
+			rs=db.query("h_user", "id",ID);
+		}
+		if(rs.next()){
+			if(rs.getString("passwd").equals(pwd))
+			{
+				User user=new User();
+				user.setID(ID);
+				user.setName(rs.getString("Cname"));
+				session.setAttribute("user", user);
+				response.sendRedirect("index.jsp");
+				return;
+			}
+		}
 		
 	}
 
