@@ -13,22 +13,21 @@
 <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
-<title>LadyMe</title>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="js/script.js" ></script>
-<script type="text/javascript">
-</script>
+<title>LadyMe</title>
 </head>
-<body>
+<body id=body_main>
 <c:if test="${user!=null}">
 <div id=div_head>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now>首页</div></a>
-	<a href=index.jsp class=guide_ahref><div id=div_guide>导航二</div></a>
-	<a href=index.jsp class=guide_ahref><div id=div_guide>导航三</div></a>
-	<a href=index.jsp class=guide_ahref><div id=div_guide>导航四</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>公司新闻</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>行业新闻</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>供求信息</div></a>
+	<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>
-		<img src="img/userIco/default.png" style="width:40px;height: 40px;float:left;margin-left:5px;margin-top:3px;"/>用户名
+		<img src="img/userIco/default.png" style="width:40px;height: 40px;float:left;margin-left:5px;margin-top:3px;"/>${user.name }
 	</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>会员中心</div></a>
 </div>
@@ -54,17 +53,40 @@
             </div>
         </div>
     </div>
+    <div id=div_news>
     <div id=div_news_left>
     	<font class=font_title style="color: #3169ee;text-align:left;">公司新闻</font>
     	<font style="color: #3169ee;float:right; font-size: 15px;position: relative;top:15px;">更多</font>
     	<hr noshade size=5 align=center width=100%>
+    	<c:forEach items="${coNews}" var="coN">
+    			<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title><c:out value="${coN.title}"/></font></a><br>
+    	</c:forEach>
     </div>
     <div id=div_news_right>
     	<font class=font_title style="color: #ec9640;text-align:left;">行业新闻</font>
     	<font style="color: #ec9640;float:right; font-size: 15px;position: relative;top:15px;">更多</font>
 		<hr noshade size=5 align=center width=100%>
+		<c:forEach items="${inNews}" var="inN">
+    			<a href="newsController?action=inN&id=${inN.id}"><font id=font_news_title><c:out value="${inN.title}"/></font></a><br>
+    	</c:forEach>
     </div>
-   
+    </div>
+    <div id=div_logis>
+    	<div id=>
+    		
+    	</div>
+    	
+    	<div id=>
+    		
+    	</div>
+    	
+    	<div id=>
+    		
+    	</div>
+    </div>
+    <div id=bottom>
+    	<p>联系我们</p>
+    </div>
 </div>
 </body>
 </html>

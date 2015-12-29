@@ -3,6 +3,9 @@ window.onload=init;
 	}
 	function offUsign() {
 		var cover=document.getElementById("cover");
+		var bot=$("#body_main").style.height;
+		alert(bot);
+		$("#body_main").attr("style", "height:"+bot-170+"px;");
 		cover.style.position="relative";
 		cover.style.bottom="170px";
 		var su=document.getElementById("showBut");

@@ -1,7 +1,6 @@
 body{
 	margin: 0px;
 	font-family:Microsoft YaHei,Î¢ÈíÑÅºÚ,ºÚÌå;
-	height:2000px;
 }
 #div_guide{
 	height:50px;
@@ -201,10 +200,31 @@ body{
 	margin-left:9%;
 	height:400px;
 	float: left;
+	overflow: hidden;
 }
 #div_news_right{
 	width:40%;
 	margin-left:2%;
 	height:400px;
 	float: left;
+	overflow: hidden;
+}
+#div_news{
+	width:100%;
+	height: 400px;
+}
+#font_news_title{
+	font-size:18px;
+	width:100%;
+	margin-bottom:12px;
+	color:#888;
+}
+#font_news_title{
+	cursor:pointer;
+	text-decoration: underline;
+}
+#bottom{
+	height: 200px;
+	width: 100%;
+	background: #444;
 }
