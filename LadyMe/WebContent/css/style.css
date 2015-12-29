@@ -214,16 +214,19 @@ body{
 }
 #div_news{
 	width:100%;
+	overflow: hidden;
 	height: 400px;
 }
 #font_news_title{
 	font-size:18px;
+	overflow: hidden;
 	width:100%;
 	margin-bottom:12px;
 	color:#888;
 }
-#font_news_title{
+#font_news_title:HOVER{
 	cursor:pointer;
+	overflow: hidden;
 	text-decoration: underline;
 }
 #bottom{

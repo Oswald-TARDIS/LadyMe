@@ -22,7 +22,7 @@ public class DataBase {
 	public DataBase(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/work?useUnicode=true&characterEncoding=UTF-8", userName, pwd);
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ladyme?useUnicode=true&characterEncoding=UTF-8", userName, pwd);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
