@@ -11,9 +11,7 @@
 <body>
 <div class=div_login>
 	<form action="UserController?action=logIn&type=司机" id="contact" method="post">
-
 		<!-- Logo, title and informative content -->
-
 		<h1 id="title">登陆</h1>
 		<!-- Form fields wrapper -->
 		<div id="wrapper" class="clearfix">
