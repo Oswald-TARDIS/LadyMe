@@ -27,7 +27,7 @@
 	<a href=index.jsp class=guide_ahref><div id=div_guide>供求信息</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>
-		<img src="img/userIco/default.png" style="width:40px;height: 40px;float:left;margin-left:5px;margin-top:3px;"/>${user.name}
+		<img src="img/userIco/default.png" style="width:36px;height: 36px;float:left;margin-left:4px;margin-top:2px;"/>${user.name}
 	</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>会员中心</div></a>
 </div>
@@ -58,13 +58,13 @@
     	<font class=font_title style="color: #3169ee;text-align:left;">公司新闻</font>
     	<font style="color: #3169ee;float:right; font-size: 15px;position: relative;top:15px;">更多</font>
     	<hr noshade size=5 align=center width=100%>
-    	<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title>dasjdoasdhoiashdoashdoaasdsdasdasdasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasasdasd</font></a><br>
-    	<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title>dasjdoasdhoiashdoashdoaasdsdasdasdasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasasdasd</font></a><br>
-    	<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title>dasjdoasdhoiashdoashdoaasdsdasdasdasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasasdasd</font></a><br>
-    	<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title>dasjdoasdhoiashdoashdoaasdsdasdasdasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasasdasd</font></a><br>
-    	<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title>dasjdoasdhoiashdoashdoaasdsdasdasdasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasasdasd</font></a><br>
     	<c:forEach items="${coNews}" var="coN">
-    		<a href="newsController?action=coN&id=${coN.id}"><font id=font_news_title><c:out value="${coN.title}"/></font></a><br>
+    		<div id=div_news_title>
+    			<a href="newsController?action=coN&id=${coN.id}" id=a_news>
+    				<font style="text-align:left;float:left" id=a_news><c:out value="${coN.title}"/></font>
+    				<font style="text-align:right;float:right" id=a_news><c:out value="${coN.time}"/></font>
+    			</a>
+    		</div>
     	</c:forEach>
     </div>
     <div id=div_news_right>
@@ -72,7 +72,12 @@
     	<font style="color: #ec9640;float:right; font-size: 15px;position: relative;top:15px;">更多</font>
 		<hr noshade size=5 align=center width=100%>
 		<c:forEach items="${inNews}" var="inN">
-    		<a href="newsController?action=inN&id=${inN.id}"><font id=font_news_title><c:out value="${inN.title}"/></font></a><br>
+			<div id=div_news_title>
+    			<a href="newsController?action=coN&id=${inN.id}" id=a_news>
+    				<font style="text-align:left;float:left" id=a_news><c:out value="${inN.title}"/></font>
+    				<font style="text-align:right;float:right" id=a_news>1-11</font>
+    			</a>
+    		</div>
     	</c:forEach>
     </div>
     </div>

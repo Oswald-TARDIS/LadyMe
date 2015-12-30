@@ -110,7 +110,7 @@ public class DataBase {
 				// TODO Auto-generated catch block
 				e.printStackTrace();			
 				}
-		return true;
+		return false;
 	}
 	public boolean delete(String table,String where,Object whereSet){
 		String sql="delete from "+table+" where "+where+"=?";

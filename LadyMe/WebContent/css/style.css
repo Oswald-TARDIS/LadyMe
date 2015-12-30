@@ -1,15 +1,15 @@
 body{
 	margin: 0px;
-	font-family:Microsoft YaHei,Î¢ÈíÑÅºÚ,ºÚÌå;
+	font-family:Microsoft YaHei;
 	background: #444;
 	height: 100%;
 }
 #div_guide{
-	height:50px;
+	height:40px;
 	width:130px;
 	text-align:center;
-	line-height:50px;
-	float: left;
+	line-height:40px;
+	float:left;
 	background: #444;
 	transition: all 0.2s;
 	-moz-transition: all 0.2s;	/* Firefox 4 */
@@ -25,10 +25,10 @@ body{
 	cursor:pointer;
 }
 #div_guide_right{
-	height:50px;
-	width:130px;
+	height:40px;
+	width:110px;
 	text-align:center;
-	line-height:50px;
+	line-height:40px;
 	float:right;
 	background: #444;
 	transition: all 0.2s;
@@ -45,10 +45,10 @@ body{
 	cursor:pointer;
 }
 #div_guide_now{
-	height:50px;
-	width:130px;
+	height:40px;
+	width:110px;
 	text-align:center;
-	line-height:50px;
+	line-height:40px;
 	float: left;
 	background: #3169ee;
 	transition: all 0.2s;
@@ -60,23 +60,23 @@ body{
 	color:#fff;
 }
 #div_head{
-	height:50px;
+	height:40px;
 	width:100%;
 	background: #444;
 	color:#fff;
-	line-height:50px;
-	font-size:20px;
-	box-shadow:1px 1px 1px #888;
+	line-height:40px;
+	font-size:15px;
+	border-bottom:3px #3169ee solid;
 	transition: all 0.2s;
 	-moz-transition: all 0.2s;	/* Firefox 4 */
 	-webkit-transition: all 0.2s;	/* Safari ºÍ Chrome */
 	-o-transition: all 0.2s;	/* Opera */
 }
 .font_text{
-	font-size: 25px;
+	font-size: 20px;
 }
 .font_title{
-	font-size:30px;
+	font-size:23px;
 }
 .font_ahref:link {
  	text-decoration: none;
@@ -217,18 +217,23 @@ body{
 	overflow: hidden;
 	height: 400px;
 }
-#font_news_title{
+#a_news:LINK{
 	font-size:18px;
 	overflow: hidden;
 	width:100%;
-	margin-bottom:12px;
 	color:#888;
 }
-#font_news_title:HOVER{
+#a_news:HOVER{
 	cursor:pointer;
 	overflow: hidden;
 	text-decoration: underline;
 }
+#div_news_title{
+	margin-bottom: 25px;
+	width: 100%;
+	height: 13px;
+}
+
 #bottom{
 	height: 200px;
 	width: 100%;

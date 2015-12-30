@@ -19,16 +19,6 @@ window.onload=init;
         $('#slider').nivoSlider({
         });
     });
-    jQuery(function(){
-    	var top=$("#div_head").offset().top;
-    	$(window).scroll(function () {
-    	  if ($(window).scrollTop() >= top) {
-    	    $("#div_head").attr("style", "position:fixed;top:0;left:0;z-index:10;");
-    	  } else {
-    	     $("#div_head").removeAttr("style");
-    	  }
-    	}).trigger("scroll");
-    	});
     function check(){
     	if($("#pwd1").val()==$("#pwd2").val()){
     	    document.getElementById("contact").submit();

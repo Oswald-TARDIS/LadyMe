@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class=div_login>
-	<form action="UserController?action=logIn" id="contact" >
+	<form action="UserController?action=logIn" id="contact" method="post">
 
 		<!-- Logo, title and informative content -->
 
@@ -22,7 +22,7 @@
 		<div id="wrapper" class="clearfix">
 
 			<!-- Name -->
-			<input type="text" class="has_icon" name="id" placeholder="ID" required>
+			<input type="text" class="has_icon" name="id" placeholder="ID/用户名" required>
 			<div class="icon-user"></div>
 
 			<!-- Email -->
