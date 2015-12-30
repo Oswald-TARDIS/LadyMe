@@ -1,0 +1,166 @@
+#left{
+ 
+	height:900px;
+    width:200px; 
+    float:left; 
+    overflow:hidden; 
+    clear:both;
+}
+
+#tou{ 
+	width:200px; 
+	display:block; 
+	background:#3169ee; 
+	height:60px; 
+	font-size:15px;  	 
+	color:#FFF; 
+	line-height:60px; 
+ 	text-align:center;
+ 	 border-bottom:1px solid #d2d2d2;
+ 	 transition:all 0.1s linear;
+	-moz-transition:all 0.1s linear;
+	-webkit-transition:all 0.1s linear;
+	-o-transition:all 0.1s linear;
+	border-radius: 4px;
+ 	 
+	}
+
+#tou_li{ 
+	 width:200px; 
+	 display:block;
+	 background:#eee; 
+	 height:60px; 
+	 
+	 font-size:15px; 
+	 line-height:60px;
+	 text-align:center; 
+     border-bottom:1px solid #d2d2d2;
+     color: #000;
+     transition:all 0.1s linear;
+	-moz-transition:all 0.1s linear;
+	-webkit-transition:all 0.1s linear;
+	-o-transition:all 0.1s linear;
+	border-radius: 4px;
+     }
+#tou_li:hover{ 
+	 background:#fff; 
+	 color:#3169ee;
+	 }
+#tou_li_now{
+	 width:200px; 
+	 display:block;
+	 background:#fff;
+	  
+	 height:60px; 
+	 font-size:15px; 
+	 line-height:60px;
+	 text-align:center; 
+     border-bottom:1px solid #d2d2d2;
+     color: #000;
+     transition:all 0.1s linear;
+	 -moz-transition:all 0.1s linear;
+	 -webkit-transition:all 0.1s linear;
+	 -o-transition:all 0.1s linear;
+	 border-radius: 4px;
+}
+
+#div_x{
+	 width:1px; 
+	 height:1000px;; 
+	 border-left:1px dashed #808080;
+	 float: left;
+	 margin-left:20px;
+}
+
+#whole{
+	width:100%;
+    margin-left:10%;
+}
+
+#user_rbt{ 
+	border-bottom:4px solid #3169ee; 
+	height:50px; 
+	line-height:50px;
+	font-size:24px; 
+	color:#3169ee;
+	text-align:right;
+	margin-bottom:10px;
+}
+	  
+#right{
+	width:870px; 
+	border:1px solid #e6e6e6;
+	 padding:20xp; 
+	 float:left;
+	 display:block; 
+	 overflow:hidden; 
+	 margin-bottom:20px;
+	  background:#eee;
+ }
+	 
+ #right_r{
+ padding-left:19%; 
+ }
+ #right_rp{
+ padding-left:8%; 
+ }
+.user_td{
+	display:block;
+     overflow:hidden; 
+	 border-top:1px solid #d3d3d3; 
+	 margin-top:20px;
+	  padding:20px 0;
+ }
+	  
+ .user_td .us_td_1{
+ font-size:20px; 
+ float:left; 
+ font-weight:bold;
+ }
+.user_td .us_td_2{
+	font-size:20px; 
+	float:right;
+}
+.btn_1{ 
+	width:232px;
+	 height:40px; 
+     background:#3169ee;
+	 cursor:pointer;
+	 border:none;
+	 color:#fff; 
+	 font-size:16px; 
+	 outline:none; 
+	 margin-left:20px;
+	 border-radius: 4px;
+}
+.user_ta{
+	width="866" ;
+	border="0" ;
+	cellspacing="0" ;
+	cellpadding="0" ;
+}
+.user_ta td{
+	font-size:14px;
+	}
+.user_ta td span{
+	color:#F00;
+	 padding-right:10%;
+	 }
+.user_ta strong{
+	color:#999; 
+	font-weight:normal;
+	}
+.u3{
+	width:300px; 
+	margin-left:20px; 
+	height:30px; 
+	outline:none; 
+	border:1px solid #d3d3d3;
+	text-indent:10px; 
+	color:#666
+	}
+.user_txt{ 
+	padding:20px 0; f
+	display:block; 
+	overflow:hidden;
+	}
