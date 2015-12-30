@@ -26,7 +26,7 @@
 	<a href=index.jsp class=guide_ahref><div id=div_guide>供求信息</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>
-	<img src="img/userIco/default.png" style="width:40px;height: 40px;float:left;margin-left:5px;margin-top:3px;"/>${user.name}
+	<img src="img/userIco/default.png" style="width:36px;height: 36px;float:left;margin-left:4px;margin-top:2px;"/>${user.name}
 	</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now style="float:right;">会员中心</div></a>
 </div>
