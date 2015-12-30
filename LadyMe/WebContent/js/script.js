@@ -29,5 +29,13 @@ window.onload=init;
     	  }
     	}).trigger("scroll");
     	});
+    function check(){
+    	if($("#pwd1").val()==$("#pwd2").val()){
+    	    document.getElementById("contact").submit();
+    	}
+    	else{
+    		$("#error").html("<font style='font-size:10px;color:#ff9d6f'>密码不一致</p>");
+    	}
+    }
 
 

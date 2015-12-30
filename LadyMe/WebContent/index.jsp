@@ -38,7 +38,7 @@
 	<center><div id=showBut onclick="showUsign()"><img src="img/down.png" style="width:20px;height:20px;position:absolute;z-index:1" /></div></center>
 	<center><div style="font-size: 30px;color:#3169ee;">赶快加入二蛋货运网!</div></center>
 	<center><table>
-	<tr><td><div id=div_register>注册</div></td><td><a href="login.jsp"><div id=div_login>登录</div></a></td></tr>
+	<tr><td><a href="register.jsp"><div id=div_register>注册</div></a></td><td><a href="login.jsp"><div id=div_login>登录</div></a></td></tr>
 	</table></center>
 	<center><div id=hideBut onclick="offUsign()"><img src="img/up.png" style="width:20px;height:20px;position:absolute;z-index:1" /></div></center>
 </div>
