@@ -1,241 +1,290 @@
-body{
+body {
 	margin: 0px;
-	font-family:Microsoft YaHei;
+	font-family: Microsoft YaHei;
 	background: #444;
 	height: 100%;
 }
-#div_guide{
-	height:40px;
-	width:130px;
-	text-align:center;
-	line-height:40px;
-	float:left;
-	background: #444;
-	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
+
+#div_guide {
+	height: 40px;
+	width: 130px;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+	background: #eee;
+	color: #888; transition : all 0.2s;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s;
+	transition: all 0.2s; /* Opera */
 }
-#div_guide:hover{
+
+#div_guide:hover {
 	background: #3169ee;
-	cursor:pointer;
+	color: #fff;
+	cursor: pointer;
 }
-#div_guide:ACTIVE{
+
+#div_guide:ACTIVE {
 	background: #1044bc;
-	cursor:pointer;
+	color: #fff;
+	cursor: pointer;
 }
-#div_guide_right{
-	height:40px;
-	width:110px;
-	text-align:center;
-	line-height:40px;
-	float:right;
-	background: #444;
+
+#div_guide_right {
+	height: 40px;
+	width: 110px;
+	text-align: center;
+	line-height: 40px;
+	float: right;
+	color: #888;
+	background: #eee;
 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
 }
-#div_guide_right:hover{
+
+#div_guide_right:hover {
 	background: #3169ee;
-	cursor:pointer;
+	color: #fff;
+	cursor: pointer;
 }
-#div_guide_right:ACTIVE{
+
+#div_guide_right:ACTIVE {
 	background: #1044bc;
-	cursor:pointer;
+	color: #fff;
+	cursor: pointer;
 }
-#div_guide_now{
-	height:40px;
-	width:110px;
-	text-align:center;
-	line-height:40px;
+
+#div_guide_now {
+	height: 40px;
+	width: 110px;
+	text-align: center;
+	line-height: 40px;
 	float: left;
 	background: #3169ee;
 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
 }
-.guide_ahref:VISITED{
-	color:#fff;
+
+.guide_ahref:VISITED {
+	color: #fff;
 }
-#div_head{
-	height:40px;
-	width:100%;
-	background: #444;
-	color:#fff;
-	line-height:40px;
-	font-size:15px;
-	border-bottom:3px #3169ee solid;
+
+#div_head {
+	height: 40px;
+	width: 100%;
+	background: #eee;
+	line-height: 40px;
+	font-size: 15px;
+	border-bottom: 3px #3169ee solid;
 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
 }
-.font_text{
+
+.font_text {
 	font-size: 20px;
 }
-.font_title{
-	font-size:23px;
+
+.font_title {
+	font-size: 23px;
 }
+
 .font_ahref:link {
- 	text-decoration: none;
- 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
-}
-.font_ahref:visited {
- 	text-decoration: none;
- 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
-}
-.font_ahref:hover {
- 	color:#3169ee;  
- 	cursor:pointer;
- 	text-decoration: none;
- 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
-}
-.font_ahref:active {
- 	color:#1044bc;
- 	text-decoration: none;
- 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
-}
-#div_login{
-	width:140px;
-	background:#fff;
-	border-radius:20px;
-	-moz-border-radius:20px; /* Old Firefox */
-	text-align:center;
-	line-height:50px;
-	height: 50px;
-	font-size: 30px;
-	background:#3169ee;
-	color:#fff;
-}
-#div_login:HOVER{
-	cursor:pointer;
-}
-#div_register{
-	width:140px;
-	background:#fff;
-	border-radius:20px;
-	-moz-border-radius:20px; /* Old Firefox */
-	text-align:center;
-	line-height:50px;
-	height: 50px;
-	font-size: 30px;
-	background:#ec9640;
-	color:#fff;
-}
-#div_register:HOVER{
-	cursor:pointer;
-}
-#div_usign{
-	width:100%;
-	height:200px;
-	background: #eee; 
-	z-index: 1;
-	margin-top:50px;
+	text-decoration: none;
 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
 }
-#div_band{
-	width:100%;
+
+.font_ahref:visited {
+	text-decoration: none;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
+}
+
+.font_ahref:hover {
+	color: #3169ee;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
+}
+
+.font_ahref:active {
+	color: #1044bc;
+	text-decoration: none;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
+}
+
+#div_login {
+	width: 140px;
+	background: #fff;
+	border-radius: 20px;
+	-moz-border-radius: 20px; /* Old Firefox */
+	text-align: center;
+	line-height: 50px;
+	height: 50px;
+	font-size: 30px;
+	background: #3169ee;
+	color: #fff;
+}
+
+#div_login:HOVER {
+	cursor: pointer;
+}
+
+#div_register {
+	width: 140px;
+	background: #fff;
+	border-radius: 20px;
+	-moz-border-radius: 20px; /* Old Firefox */
+	text-align: center;
+	line-height: 50px;
+	height: 50px;
+	font-size: 30px;
+	background: #ec9640;
+	color: #fff;
+}
+
+#div_register:HOVER {
+	cursor: pointer;
+}
+
+#div_usign {
+	width: 100%;
+	height: 200px;
+	background: #eee;
+	z-index: 1;
+	margin-top: 50px;
+	transition: all 0.2s;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
+}
+
+#div_band {
+	width: 100%;
 	height: 400px;
 	background: #aaa;
 }
-#cover{
+
+#cover {
 	z-index: 2;
 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
 	position: relative;
 	bottom: 0px;
-	background: #fff;
+	background: #eee;
 }
-#showBut{
-	width:20px;
-	height:20px;
-	opacity:0;
-	margin-bottom:5px;
+
+#showBut {
+	width: 20px;
+	height: 20px;
+	opacity: 0;
+	margin-bottom: 5px;
 	transition: all 0.2s;
-	-moz-transition: all 0.2s;	/* Firefox 4 */
-	-webkit-transition: all 0.2s;	/* Safari 和 Chrome */
-	-o-transition: all 0.2s;	/* Opera */
-	position:relative;
-	right:10px;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari 和 Chrome */
+	-o-transition: all 0.2s; /* Opera */
+	position: relative;
+	right: 10px;
 }
-#showBut:HOVER{
-	cursor:pointer;
+
+#showBut:HOVER {
+	cursor: pointer;
 }
-#hideBut{
-	width:20px;
-	height:20px;
-	position:relative;
-	right:10px;
-	top:50px;
+
+#hideBut {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	right: 10px;
+	top: 50px;
 }
-#hideBut:HOVER{
-	cursor:pointer;
+
+#hideBut:HOVER {
+	cursor: pointer;
 }
-#showBut:HOVER{
-	cursor:pointer;
+
+#showBut:HOVER {
+	cursor: pointer;
 }
-#img_band{
-	width:100%;
+
+#img_band {
+	width: 100%;
 	height: 600px;
 	z-index: 1;
 }
-#div_news_left{
-	width:40%;
-	margin-left:9%;
-	height:400px;
-	float: left;
+
+#div_news {
+	width: 100%;
+	border: 1px #aaa solid;
+	height: 300px;
 	overflow: hidden;
+	background: #fff;
 }
-#div_news_right{
-	width:40%;
-	margin-left:2%;
-	height:400px;
-	float: left;
+
+#div_info {
+	width: 100%;
+	border: 1px #aaa solid;
+	height: 300px;
 	overflow: hidden;
+	background: #fff;
 }
-#div_news{
-	width:100%;
+
+#div_content {
+	width: 100%;
 	overflow: hidden;
-	height: 400px;
+	background: #eee;
 }
-#a_news:LINK{
-	font-size:18px;
+
+#a_news:LINK {
+	font-size: 18px;
 	overflow: hidden;
-	width:100%;
-	color:#888;
+	width: 100%;
+	color: #888;
 }
-#a_news:HOVER{
-	cursor:pointer;
+
+#a_news:HOVER {
+	cursor: pointer;
 	overflow: hidden;
 	text-decoration: underline;
 }
-#div_news_title{
+
+#div_news_title {
 	margin-bottom: 25px;
 	width: 100%;
 	height: 13px;
 }
 
-#bottom{
-	height: 200px;
+#bottom {
+	margin-top:10px;
+	height: 40px;
 	width: 100%;
-	background: #444;
+	background: #ffffff;
+	padding-top:20px;
+	color: #000000;
+}
+#contect:link{
+	color:#000000;
+	text-decoration: none;
+}
+#contect:HOVER {
+	text-decoration: underline;
 }

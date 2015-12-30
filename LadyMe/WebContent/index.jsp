@@ -47,17 +47,78 @@
 	<div id="wrapper">
         <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
-                <img src="img/bank002.jpg" id=img_band alt="" title="This is an example of a caption" />
-                <img src="img/bank003.jpg" id=img_band alt="" data-transition="slideInLeft"/>
-                <img src="img/bank004.jpg" id=img_band alt=""  />
+                <img src="img/bank002.jpg" id=img_band alt="" data-transition="fade" />
+                <img src="img/bank003.jpg" id=img_band alt="" data-transition="fade" />
+                <img src="img/bank004.jpg" id=img_band alt="" data-transition="fade" />
             </div>
         </div>
     </div>
+    <div id=div_content>
+    <div id=left style="float:left;width:69%;margin-left:1%">
+    	<div id=div_info>
+    		<div style="width:2%;height:38px;float:left;background:#3169ee"></div>
+    		<font class=font_title style="text-align:left;">货源中心</font>
+    		<font style="color:#aaa;">Center of Supply</font>
+    		<font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
+    		<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font>
+    		<hr noshade size=1 align=center width=100% color="#3169ee">
+    		<table style="width:100%">
+    		<tr>
+    			<td style="width:25%;text-align: center;">始发地</td>
+    			<td style="width:25%;text-align: center;">目的地</td>
+    			<td style="width:20%;text-align: center;">货物类型</td>
+    			<td style="width:15%;text-align: center;">发布时间</td>
+    			<td style="width:15%;text-align: center;">操作</td>
+    		</tr>
+    		
+    		<c:forEach items="${infoSupply}" var="iS">
+    		<tr>
+   				<td style="text-align: center;">始发地</td>
+    			<td style="text-align: center;">目的地</td>
+    			<td style="text-align: center;">货物类型</td>
+    			<td style="text-align: center;">发布时间</td>
+    			<td style="text-align: center;">操作</td>
+   			</tr>
+    		</c:forEach>
+    		</table>
+    	</div>
+    	<div id=div_info style="position: relative;bottom: 1px;">
+    		<div style="width:2%;height:38px;float:left;background:#ec9640"></div>
+    		<font class=font_title style="text-align:left;">车源中心</font>
+    		<font style="color:#aaa;">Center of Vehicle</font>
+    		<font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
+    		<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font>
+    		<hr noshade size=1 align=center width=100% color="#ec9640">
+    		<table style="width:100%">
+    		<tr>
+    			<td style="width:25%;text-align: center;">始发地</td>
+    			<td style="width:25%;text-align: center;">目的地</td>
+    			<td style="width:15%;text-align: center;">车牌号</td>
+    			<td style="width:15%;text-align: center;">承重/吨</td>
+    			<td style="width:10%;text-align: center;">车长/米</td>		
+    			<td style="width:10%;text-align: center;">操作</td>
+    		</tr>
+    		<c:forEach items="${infoVehicle}" var="iV">
+    		<tr>
+   				<td style="text-align: center;">始发地</td>
+    			<td style="text-align: center;">目的地</td>
+    			<td style="text-align: center;">车牌号</td>
+    			<td style="text-align: center;">承重/吨</td>
+    			<td style="text-align: center;">车长/米</td>		
+    			<td style="text-align: center;">操作</td>
+   			</tr>
+    		</c:forEach>
+    		</table>
+    	</div>
+    </div>
+    
+    <div id=right style="float:left;width:29%">
     <div id=div_news>
-    <div id=div_news_left>
-    	<font class=font_title style="color: #3169ee;text-align:left;">公司新闻</font>
-    	<font style="color: #3169ee;float:right; font-size: 15px;position: relative;top:15px;">更多</font>
-    	<hr noshade size=5 align=center width=100%>
+    	<font class=font_title style="text-align:left;">公司新闻</font>
+    	<font style="color:#aaa;">News of Company</font>
+    	<font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
+    	<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font>
+    	<hr noshade size=1 align=center width=100% color="#3169ee">
     	<c:forEach items="${coNews}" var="coN">
     		<div id=div_news_title>
     			<a href="newsController?action=coN&id=${coN.id}" id=a_news>
@@ -67,10 +128,12 @@
     		</div>
     	</c:forEach>
     </div>
-    <div id=div_news_right>
-    	<font class=font_title style="color: #ec9640;text-align:left;">行业新闻</font>
-    	<font style="color: #ec9640;float:right; font-size: 15px;position: relative;top:15px;">更多</font>
-		<hr noshade size=5 align=center width=100%>
+    <div id=div_news style="position: relative;bottom: 1px;">
+    	<font class=font_title style="color:text-align:left;">行业新闻</font>
+    	<font style="color:#aaa;">News of Industry</font>
+    	<font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
+    	<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font>
+		<hr noshade size=1 align=center width=100% color="#ec9640">
 		<c:forEach items="${inNews}" var="inN">
 			<div id=div_news_title>
     			<a href="newsController?action=coN&id=${inN.id}" id=a_news>
@@ -81,6 +144,7 @@
     	</c:forEach>
     </div>
     </div>
+    
     <div id=div_logis>
     	<div id=>
     		
@@ -94,8 +158,12 @@
     		
     	</div>
     </div>
+    </div>
     <div id=bottom>
-    	<center><p style="color:#fff;font-size: 25px;">联系我们</p></center>
+    	<div style="margin:0 auto;width:60%;font-size:14px;text-align: center;">
+    	Copyright © 2012-2015 <img src="img/LOGO.png" style="width: 14px;height: 14px;"/> 二蛋货运有限公司. All rights reserved.沪ICP备10005645
+    	<a id=contect href="#">联系我们</a>
+    	</div>
     </div>
 </div>
 </body>

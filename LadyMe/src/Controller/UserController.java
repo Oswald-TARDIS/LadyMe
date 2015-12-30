@@ -1,4 +1,4 @@
-package UserPackage;
+package Controller;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -76,17 +76,19 @@ public class UserController extends HttpServlet {
 		String pwd= request.getParameter("passwd");
 		ResultSet rs=null;
 		ResultSet rs2=null;
+		User user=new User();
 		if(type.equals("Ë¾»ú")){
 			rs=db.query("c_user", "id",ID);
 			rs2=db.query("c_user", "name", ID);
+			user.setType(User.DRIVER);
 		}else{
 			rs=db.query("h_user", "id",ID);
 			rs2=db.query("h_user", "name", ID);
+			user.setType(User.CLIENT);
 		}
 		if(rs.next()){
 			if(rs.getString("passwd").equals(pwd))
 			{
-				User user=new User();
 				user.setID(ID);
 				user.setName(rs.getString("name"));
 				session.setAttribute("user", user);
@@ -98,7 +100,6 @@ public class UserController extends HttpServlet {
 		}else if(rs2.next()){
 			if(rs2.getString("passwd").equals(pwd))
 			{
-				User user=new User();
 				user.setID(ID);
 				user.setName(rs2.getString("name"));
 				session.setAttribute("user", user);
