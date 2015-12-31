@@ -19,6 +19,9 @@
 <title>LadyMe</title>
 </head>
 <body id=body_main>
+<c:if test="${empty coNews||empty inNews}">
+<c:redirect url="NewsController?action=query"/>
+</c:if>
 <c:if test="${user!=null}">
 <div id=div_head>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now>首页</div></a>
@@ -123,8 +126,8 @@
     	<c:forEach items="${coNews}" var="coN">
     		<div id=div_news_title>
     			<a href="newsController?action=coN&id=${coN.id}" id=a_news>
-    				<font style="text-align:left;float:left" id=a_news><c:out value="${coN.title}"/></font>
-    				<font style="text-align:right;float:right" id=a_news><c:out value="${coN.time}"/></font>
+    				<font style="text-align:left;float:left;width:70%;height:22px;overflow: hidden;" id=a_news><c:out value="${coN.title}"/></font>
+    				<font style="text-align:right;float:right;width:30%;height:22px;overflow: hidden;" id=a_news><c:out value="${coN.time}"/></font>
     			</a>
     		</div>
     	</c:forEach>
@@ -138,8 +141,8 @@
 		<c:forEach items="${inNews}" var="inN">
 			<div id=div_news_title>
     			<a href="newsController?action=coN&id=${inN.id}" id=a_news>
-    				<font style="text-align:left;float:left" id=a_news><c:out value="${inN.title}"/></font>
-    				<font style="text-align:right;float:right" id=a_news>1-11</font>
+    				<font style="text-align:left;float:left;width:70%;height:22px;overflow:hidden;" id=a_news><c:out value="${inN.title}"/></font>
+    				<font style="text-align:right;float:right;width:30%;height:22px;overflow:hidden;" id=a_news>1-11</font>
     			</a>
     		</div>
     	</c:forEach>
