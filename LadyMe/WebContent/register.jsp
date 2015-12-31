@@ -5,7 +5,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="css/register.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="js/script.js" ></script>
@@ -35,7 +35,7 @@
 			<table>
 			<tr><td><input type="radio"   name="type" value="司机" ></td><td><font style="font-size: 13px;position: relative; bottom: 9px;">车主</font></td>
 			<td><input type="radio"   name="type" value="货主" checked></td><td><font style="font-size: 13px;position: relative; bottom: 9px; ">货主</font></td>
-			</tr></table>
+			<td style="color:#ff4444;position: relative; bottom: 9px; ">${regError}</td></tr></table>
 			<button id="sub" type="button" onclick="check()">
 				<i class="icon-chat"></i> 注册
 			</button>

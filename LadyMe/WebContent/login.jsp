@@ -14,13 +14,10 @@
 <body>
 <div class=div_login>
 	<form action="UserController?action=logIn" id="contact" method="post">
-
 		<!-- Logo, title and informative content -->
-
 		<h1 id="title">登陆</h1>
 		<!-- Form fields wrapper -->
 		<div id="wrapper" class="clearfix">
-
 			<!-- Name -->
 			<input type="text" class="has_icon" name="id" placeholder="ID/用户名" required>
 			<div class="icon-user"></div>
@@ -37,8 +34,9 @@
 			<table>
 			<tr><td><input type="radio"   name="type" value="司机" ></td><td><font style="font-size: 13px;position: relative; bottom: 9px;">车主</font></td>
 			<td><input type="radio"   name="type" value="货主" checked></td><td><font style="font-size: 13px;position: relative; bottom: 9px; ">货主</font></td>
+			<td style="color:#ff4444;position: relative; bottom: 9px; ">${logError}</td></tr>
 			</table>
-			<button id="submit" type="submit" >
+			<button id="sub" type="submit" >
 				<i class="icon-chat"></i> 登陆
 			</button>
 

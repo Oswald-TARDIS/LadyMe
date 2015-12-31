@@ -1,4 +1,4 @@
-package Bean;
+package com.oswald.ladyme.bean;
 
 public class News {
 	String title;

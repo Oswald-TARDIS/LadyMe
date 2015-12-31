@@ -1,4 +1,4 @@
-package tools;
+package com.oswald.ladyme.tools;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,11 +16,11 @@ import java.util.Map;
  *  
  *  
  */
-
 public class DataBase {
 	private Connection conn;
 	private String userName="root";
 	private String pwd="123456";
+	
 	public DataBase(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -32,6 +32,9 @@ public class DataBase {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	protected void finalize() throws Throwable{
+		conn.close();
 	}
 	public DataBase(String dataBaseName,String userName,String pwd)
 	{
@@ -105,12 +108,13 @@ public class DataBase {
 	    		 i++;
 	    		 ps.setObject(i,val);
 	    	 }
-	    	 return ps.execute();
+	    	 ps.execute();
+	    	 return true;
 		 } catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();			
+				return false;
 				}
-		return false;
 	}
 	public boolean delete(String table,String where,Object whereSet){
 		String sql="delete from "+table+" where "+where+"=?";
@@ -151,12 +155,13 @@ public class DataBase {
 	    		 ps.setObject(i,val);
 	    	 }
 	    	 ps.setObject(vals.size()+1, whereSet);
-	    	 return ps.execute();
+	    	ps.execute();
+	    	return true;
 		 } catch (SQLException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();			
+				e.printStackTrace();
+				return false;
 				}
-		return true;
 	}
 	public Connection getConnection() {
 		return conn;

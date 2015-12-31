@@ -1,11 +1,11 @@
- package Bean;
+ package com.oswald.ladyme.bean;
 
 public class User {
 	public final static int CLIENT=0;
 	public final static int DRIVER=1;
-	private String ID;
-	private String name;
-	private int type;
+	protected String ID;
+	protected String name;
+	protected int type;
 	public int getType() {
 		return type;
 	}
