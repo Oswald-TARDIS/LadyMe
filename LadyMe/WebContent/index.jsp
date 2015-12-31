@@ -77,11 +77,11 @@
     		
     		<c:forEach items="${infoSupply}" var="iS">
     		<tr>
-   				<td style="text-align: center;">始发地</td>
-    			<td style="text-align: center;">目的地</td>
-    			<td style="text-align: center;">货物类型</td>
-    			<td style="text-align: center;">发布时间</td>
-    			<td style="text-align: center;">操作</td>
+   				<td style="text-align: center;">${iS.origin_place}</td>
+    			<td style="text-align: center;">${iS.destination}</td>
+    			<td style="text-align: center;">${iS.good_type}</td>
+    			<td style="text-align: center;">${iS.time}</td>
+    			<td style="text-align: center;">查看详情</td>
    			</tr>
     		</c:forEach>
     		</table>
