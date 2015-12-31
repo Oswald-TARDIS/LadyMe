@@ -3,6 +3,7 @@ package com.oswald.ladyme.bean;
 import java.util.HashMap;
 
 public class News implements BaseBean {
+	int id;
 	String title;
 	String time;
 	String auther;
@@ -38,5 +39,13 @@ public class News implements BaseBean {
 
 	public void setAuther(String auther) {
 		this.auther = auther;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

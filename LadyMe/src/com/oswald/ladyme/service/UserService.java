@@ -19,11 +19,9 @@ import com.oswald.ladyme.dao.HuserDaoImpl;
 import com.oswald.ladyme.tools.DataBase;
 
 public class UserService {
-	DataBase db;
 	CuserDaoImpl cdi;
 	HuserDaoImpl hdi;
 	public UserService(){
-		db=new DataBase();
 		cdi=new CuserDaoImpl();
 		hdi=new HuserDaoImpl();
 	}
@@ -37,7 +35,7 @@ public class UserService {
 		ResultSet rs2=null;
 		User user=new User();
 		if(type.equals("Ë¾»ú")){
-			System.out.println("");
+			 
 			rs=cdi.query("id", ID);
 			rs2=cdi.query("name", ID);
 			user.setType(User.DRIVER);
