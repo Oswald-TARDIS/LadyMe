@@ -44,7 +44,7 @@ public class NewsController extends HttpServlet {
 		try {
 			switch (flag) {
 			case 0:
-				service.query();
+				service.query(this.getServletContext());
 				break;
 			case 1:
 				break;
