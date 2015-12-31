@@ -6,14 +6,16 @@ import java.util.HashMap;
 
 import com.oswald.ladyme.tools.DataBase;
 
-public class BaseDaoImpl implements BaseDao{
+public class BaseDaoImpl implements BaseDao {
 	String table;
 	DataBase db;
+
 	public BaseDaoImpl(String table) {
 		// TODO Auto-generated constructor stub
-		this.table=table;
-		db=new DataBase();
+		this.table = table;
+		db = new DataBase();
 	}
+
 	public ResultSet query(String where, Object whereSet) {
 		// TODO Auto-generated method stub
 		return db.query(table, where, whereSet);
@@ -36,11 +38,18 @@ public class BaseDaoImpl implements BaseDao{
 		// TODO Auto-generated method stub
 		return db.update(table, map, where, whereSet);
 	}
-	public int getRow() throws SQLException{
-		ResultSet rs=db.query(table,null, null);
+
+	public int getRow() throws SQLException {
+		ResultSet rs = db.query(table, null, null);
 		rs.last();
 		return rs.getRow();
-		
+
+	}
+
+	@Override
+	public ResultSet query(int beginIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		return db.query(table, beginIndex, pageSize);
 	}
 
 }

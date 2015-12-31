@@ -60,11 +60,14 @@ public class UserController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		String action = request.getParameter("action");
 		System.out.println(action);
-		UserService us=new UserService();
+		UserService service = new UserService();
 		try {
-			if (action.equals("signIn")) us.signIn(request, response);
-			if (action.equals("logIn")) us.logIn(request, response);
-			if (action.equals("logout")) us.logOut(request,response);
+			if (action.equals("signIn"))
+				service.signIn(request, response);
+			if (action.equals("logIn"))
+				service.logIn(request, response);
+			if (action.equals("logout"))
+				service.logOut(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

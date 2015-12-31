@@ -2,7 +2,7 @@ package com.oswald.ladyme.bean;
 
 import java.util.HashMap;
 
-public class HUser extends User{
+public class HUser extends User implements BaseBean {
 	String passwd;
 
 	public String getPasswd() {
@@ -12,11 +12,12 @@ public class HUser extends User{
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
-	public HashMap<String,Object> toMap(){
-		HashMap<String,Object> map=new HashMap<>();
+
+	public HashMap<String, Object> toMap() {
+		HashMap<String, Object> map = new HashMap<>();
 		map.put("id", ID);
 		map.put("name", name);
-		map.put("passwd",passwd);
+		map.put("passwd", passwd);
 		return map;
 	}
 }

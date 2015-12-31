@@ -69,7 +69,6 @@ public class DataBase {
 			sql="select * from "+table+" where "+where+"=?";
 		ResultSet rs=null;
 		try {
-			System.out.println();
 			PreparedStatement ps=conn.prepareStatement(sql);
 			if(whereSet!=null)
 				ps.setObject(1,whereSet);
@@ -80,7 +79,22 @@ public class DataBase {
 		}
 		return rs;
 	}
-	
+	/*
+	 * ∑÷“≥≤È—Øquery
+	 */
+	public ResultSet query(String table,int beginIndex,int pageSize){
+		String sql="select * from "+table+" limit "+beginIndex+","+pageSize;
+		ResultSet rs=null;
+		try {
+			PreparedStatement ps=conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+		
+	}
 	public boolean insert(String tableName,HashMap<String,Object> map){
 		Iterator iter = map.entrySet().iterator(); 
 		String sql="insert into "+tableName+" (";
