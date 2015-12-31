@@ -22,6 +22,9 @@
 <c:if test="${empty coNews||empty inNews}">
 <c:redirect url="NewsController?action=query"/>
 </c:if>
+<c:if test="${empty infoSupply||empty infoVehicle}">
+<c:redirect url="SendgoodController?action=query"/>
+</c:if>
 <c:if test="${user!=null}">
 <div id=div_head>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now>首页</div></a>
@@ -104,12 +107,12 @@
     		</tr>
     		<c:forEach items="${infoVehicle}" var="iV">
     		<tr>
-   				<td style="text-align: center;">始发地</td>
-    			<td style="text-align: center;">目的地</td>
-    			<td style="text-align: center;">车牌号</td>
-    			<td style="text-align: center;">承重/吨</td>
-    			<td style="text-align: center;">车长/米</td>		
-    			<td style="text-align: center;">操作</td>
+   				<td style="text-align: center;">${iV.origin_place}</td>
+    			<td style="text-align: center;">${iV.destination}</td>
+    			<td style="text-align: center;">${iV.plate_num}</td>
+    			<td style="text-align: center;">${iV.load_weight}</td>
+    			<td style="text-align: center;">${iV.car_length}</td>		
+    			<td style="text-align: center;">查看详情</td>
    			</tr>
     		</c:forEach>
     		</table>

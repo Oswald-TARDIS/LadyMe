@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oswald.ladyme.bean.News;
 import com.oswald.ladyme.bean.Sendgoods;
+import com.oswald.ladyme.bean.Vehicle;
 import com.oswald.ladyme.dao.CnewsDaoImpl;
 import com.oswald.ladyme.dao.InnewsDaoImpl;
 import com.oswald.ladyme.dao.SendgoodDaoImpl;
@@ -21,7 +22,6 @@ public class SendService {
 	SendvehicleDaoImpl svdi;
 	HttpServletRequest request;
 	HttpServletResponse response;
-	
 
 	public SendService(HttpServletRequest request, HttpServletResponse response) {
 		this.request = request;
@@ -33,8 +33,11 @@ public class SendService {
 	public void query(ServletContext application) throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		List<Sendgoods> li = new ArrayList<>();
-		 li=sgdi.queryForList(0, 7);
+		List<Vehicle> li2 = new ArrayList<>();
+		li2 = svdi.queryForList(0, 7);
+		li = sgdi.queryForList(0, 7);
 		application.setAttribute("infoSupply", li);
+		application.setAttribute("infoVehicle", li2);
 		response.sendRedirect("index.jsp");
 	}
 
