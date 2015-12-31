@@ -1,7 +1,12 @@
 package com.oswald.ladyme.dao;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
+
+import com.oswald.ladyme.bean.BaseBean;
+import com.oswald.ladyme.bean.News;
 
 public interface BaseDao {
 	/*
@@ -28,5 +33,8 @@ public interface BaseDao {
 	 * 
 	 */
 	boolean update(HashMap<String, Object> map, String where, Object whereSet);
+	
+	public boolean insert(BaseBean n) ;
+	public boolean update(BaseBean n, String where, String whereSet);
 
 }

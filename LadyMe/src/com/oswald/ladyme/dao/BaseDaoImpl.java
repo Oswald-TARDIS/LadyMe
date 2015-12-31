@@ -2,8 +2,12 @@ package com.oswald.ladyme.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import com.oswald.ladyme.bean.BaseBean;
+import com.oswald.ladyme.bean.News;
 import com.oswald.ladyme.tools.DataBase;
 
 public class BaseDaoImpl implements BaseDao {
@@ -51,5 +55,11 @@ public class BaseDaoImpl implements BaseDao {
 		// TODO Auto-generated method stub
 		return db.query(table, beginIndex, pageSize);
 	}
-
+	
+	public boolean insert(BaseBean n) {
+		return db.insert(table, n.toMap());
+	}
+	public boolean update(BaseBean n, String where, String whereSet) {
+		return db.update(table, n.toMap(), where, whereSet);
+	}
 }

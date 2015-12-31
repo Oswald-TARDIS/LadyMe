@@ -15,14 +15,6 @@ public class InnewsDaoImpl extends BaseDaoImpl {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean insert(News n) {
-		return super.insert(n.toMap());
-	}
-
-	public boolean update(News n, String where, String whereSet) {
-		return super.update(n.toMap(), where, whereSet);
-	}
-
 	public List<News> queryForList(int beginIndex, int pageSize) throws SQLException {
 		ResultSet rs = super.query(beginIndex, pageSize);
 		List<News> li = new ArrayList<>();
