@@ -47,6 +47,7 @@ public class SendController extends HttpServlet {
 		if (action.equals("query")) flag = 0;
 		if(action.equals("insert")) flag =1;
 		if(action.equals("insertV")) flag=2;
+		if(action.equals("queryall")) flag=3;
 		try {
 			switch (flag) {
 			case 0:
@@ -55,8 +56,13 @@ public class SendController extends HttpServlet {
 			case 1:
 				service.insert();
 				break;
+			case 2:
+				service.insertV();
+				break;
+			case 3:
+				service.queryall();
 			default:
-				service.insertV();;
+				
 				break;
 			}
 		} catch (SQLException e) {

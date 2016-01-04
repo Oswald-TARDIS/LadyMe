@@ -35,7 +35,7 @@
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
 <a href="sendgoods.jsp"><div id=tou_li_now >我要发货</div></a>
-<a href="#"><div id=tou_li >已发布货源</div></a>
+<a href="personal_goodshow.jsp"><div id=tou_li >已发布货源</div></a>
 <a href="#"><div id=tou_li >待确认订单</div></a>
 <a href="#"><div id=tou_li >进行中订单</div></a>
 <a href="#"><div id=tou_li >历史订单</div></a>
@@ -48,7 +48,7 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
-<form action="SendController?action=insert" method="post">
+<form action="SendgoodController?action=insert" method="post">
 <input type="hidden" value="${user.ID}" name="userID">
 <!-- right -->
 <div id=right>
@@ -120,7 +120,7 @@
   </tr>
   <tr>
     <td width="128" height="92" align="right">留言：</td>
-    <td height="92" colspan="4"><textarea name="message" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
+    <td height="92" colspan="4"><input name="message" id="textarea"  class="u5"/></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>

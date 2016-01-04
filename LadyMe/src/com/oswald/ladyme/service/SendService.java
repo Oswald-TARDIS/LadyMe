@@ -11,6 +11,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oswald.ladyme.bean.News;
 import com.oswald.ladyme.bean.Vehicle;
@@ -44,6 +45,13 @@ public class SendService {
 		application.setAttribute("infoSupply", li);
 		application.setAttribute("infoVehicle", li2);
 		response.sendRedirect("index.jsp");
+	}
+	public void queryall() throws SQLException, IOException{
+		List<Goods>li =new ArrayList<>();
+		HttpSession session=request.getSession();
+		li=sgdi.queryallForList();
+		session.setAttribute("queryall", li);
+		response.sendRedirect("personal_goodshow.jsp");
 	}
 	public void insert() throws IOException {
 		Goods good=new Goods();
