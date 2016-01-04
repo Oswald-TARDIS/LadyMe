@@ -38,6 +38,7 @@ public class SendgoodController extends HttpServlet {
 		SendService service =new SendService(request, response);
 		int flag = 0;
 		if (action.equals("query")) flag = 0;
+		if(action.equals("insert")) flag =1;
 		try {
 			switch (flag) {
 			case 0:

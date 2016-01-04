@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oswald.ladyme.bean.News;
+import com.oswald.ladyme.bean.Goods;
 import com.oswald.ladyme.bean.GoodsShow;
 import com.oswald.ladyme.bean.VehicleShow;
 import com.oswald.ladyme.dao.CnewsDaoImpl;
@@ -40,5 +41,8 @@ public class SendService {
 		application.setAttribute("infoVehicle", li2);
 		response.sendRedirect("index.jsp");
 	}
-
+	public void insert() {
+		Goods good=new Goods();
+		good.setId((int)request.getAttribute("id"));
+	}
 }

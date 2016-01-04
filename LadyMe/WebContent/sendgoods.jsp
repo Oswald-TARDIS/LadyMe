@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
 
-
  
 <title>LadyMe</title>
 </head>
@@ -48,50 +47,23 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
+<form actiong="SendgoodController?action=insert" method="post">
 <!-- right -->
 <div id=right>
   <div id="user_rbt"><font style="padding-right: 10px;">我要发货</font></div>
   <div id=right_rp>
   <table width="866" border="0" cellspacing="0" cellpadding="0" class="user_ta">
   <tr>
-    <td width="128"  height="45" align="right"><span>*</span>始发地：</td>
-    <td width="204"  height="45" align="left"><select name="select" id="select" class="u1">
-      <option>河南省</option>
-    </select></td>
-    <td height="45" colspan="2" align="left"><select name="select" id="select" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="186"  height="45" align="left"><select name="select" id="select" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="141">&nbsp;</td>
+    <td width="128" height="45" align="right"><span>*</span>装货地址：</td>
+    <td height="45" colspan="4"><script type="text/javascript" src="js/select.js"></script></td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right">装货地址：</td>
-    <td height="45" colspan="4"><input type="text" name="textfield" id="textfield" class="u2" /></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45" align="right"><span>*</span>目的地：</td>
-    <td width="204" height="45"><select name="select2" id="select2" class="u1">
-      <option>河南省</option>
-    </select></td>
-    <td height="45" colspan="2"><select name="select3" id="select3" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="186" height="45"><select name="select4" id="select4" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45" align="right">卸货地址：</td>
-    <td height="45" colspan="4"><input name="textfield2" type="text" class="u2" id="textfield2" value="请填写" /></td>
-    <td width="141">&nbsp;</td>
+    <td width="128" height="45" align="right"><span>*</span>卸货地址：</td>
+   <td height="45" colspan="4"><script type="text/javascript" src="js/select2.js"></script></td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>收货电话：</td>
-    <td height="45" colspan="3"><input name="textfield3" type="text" class="u3" id="textfield3" value="请填写" /></td>
+    <td height="45" colspan="3"><input name="textfield3" type="text" class="u3" id="textfield3" placeholder="请填写" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -104,17 +76,17 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>货物类型：</td>
-    <td height="45" colspan="2"><input name="textfield4" type="text" class="u3" id="textfield4" value="请填写" /></td>
+    <td height="45" colspan="2"><input name="textfield4" type="text" class="u3" id="textfield4" placeholder="请填写" /></td>
     <td height="45" align="right"><a href=""><img src="user_img/user1.jpg" alt="" /></a></td>
     <td width="186" height="45"><a href=""></a></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>重量：</td>
-    <td width="204" height="45"><input name="textfield5" type="text" class="u4" id="textfield5" value="请填写" /></td>
+    <td width="204" height="45"><input name="textfield5" type="text" class="u4" id="textfield5" placeholder="请填写" /></td>
     <td width="116" height="45" align="left"><strong>吨</strong></td>
     <td width="91" align="right">体积：</td>
-    <td width="186" height="45"><input name="textfield6" type="text" class="u4" id="textfield6" value="请填写" /></td>
+    <td width="186" height="45"><input name="textfield6" type="text" class="u4" id="textfield6" placeholder="请填写" /></td>
     <td width="141"><strong>m（请任选一项）</strong></td>
   </tr>
   <tr>
@@ -137,7 +109,7 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right">意愿价：</td>
-    <td width="204" height="45"><input name="textfield7" type="text" class="u4" id="textfield7" value="请填写" /></td>
+    <td width="204" height="45"><input name="textfield7" type="text" class="u4" id="textfield7" placeholder="请填写" /></td>
     <td height="45" colspan="2"><strong>元</strong></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
@@ -167,6 +139,7 @@
   
   
   </div>
+  </form>
   
 </div>
 </body>
