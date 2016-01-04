@@ -2,7 +2,7 @@ package com.oswald.ladyme.bean;
 
 import java.util.HashMap;
 
-public class Vehicle implements BaseBean{
+public class VehicleShow implements BaseBean{
 	int id;
 	String origin_place;
 	String destination;

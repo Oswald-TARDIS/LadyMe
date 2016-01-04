@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import org.apache.tomcat.util.modeler.BaseModelMBean;
 
-public class Sendgoods implements BaseBean {
+public class GoodsShow implements BaseBean {
 	int id;
 	String origin_place;
 	String destination;

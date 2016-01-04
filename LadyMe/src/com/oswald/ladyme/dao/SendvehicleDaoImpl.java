@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.oswald.ladyme.bean.Vehicle;
+import com.oswald.ladyme.bean.VehicleShow;
 
 public class SendvehicleDaoImpl extends BaseDaoImpl{
 	public final static String theTable="send_vehicle";
@@ -13,11 +13,11 @@ public class SendvehicleDaoImpl extends BaseDaoImpl{
 		super(theTable);
 		// TODO Auto-generated constructor stub
 	}
-	public List<Vehicle> queryForList(int beginIndex, int pageSize) throws SQLException {
+	public List<VehicleShow> queryForList(int beginIndex, int pageSize) throws SQLException {
 		ResultSet rs = super.query(beginIndex, pageSize);
-		List<Vehicle> li = new ArrayList<>();
+		List<VehicleShow> li = new ArrayList<>();
 		while (rs.next()) {
-			Vehicle n = new Vehicle();
+			VehicleShow n = new VehicleShow();
 			n.setId(rs.getInt("id"));
 			n.setPlate_num(rs.getString("plate_num"));
 			n.setCar_length(rs.getFloat("car_length"));

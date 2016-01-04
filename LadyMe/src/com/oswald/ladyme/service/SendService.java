@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oswald.ladyme.bean.News;
-import com.oswald.ladyme.bean.Sendgoods;
-import com.oswald.ladyme.bean.Vehicle;
+import com.oswald.ladyme.bean.GoodsShow;
+import com.oswald.ladyme.bean.VehicleShow;
 import com.oswald.ladyme.dao.CnewsDaoImpl;
 import com.oswald.ladyme.dao.InnewsDaoImpl;
 import com.oswald.ladyme.dao.SendgoodDaoImpl;
@@ -32,8 +32,8 @@ public class SendService {
 
 	public void query(ServletContext application) throws SQLException, IOException {
 		// TODO Auto-generated method stub
-		List<Sendgoods> li = new ArrayList<>();
-		List<Vehicle> li2 = new ArrayList<>();
+		List<GoodsShow> li = new ArrayList<>();
+		List<VehicleShow> li2 = new ArrayList<>();
 		li2 = svdi.queryForList(0, 7);
 		li = sgdi.queryForList(0, 7);
 		application.setAttribute("infoSupply", li);

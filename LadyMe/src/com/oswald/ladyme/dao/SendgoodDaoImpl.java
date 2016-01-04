@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.oswald.ladyme.bean.Sendgoods;
+import com.oswald.ladyme.bean.GoodsShow;
 
 public class SendgoodDaoImpl extends BaseDaoImpl{
 	public final static String theTable="send_good";
@@ -12,11 +12,11 @@ public class SendgoodDaoImpl extends BaseDaoImpl{
 		super(theTable);
 		// TODO Auto-generated constructor stub
 	}
-	public List<Sendgoods> queryForList(int beginIndex, int pageSize) throws SQLException {
+	public List<GoodsShow> queryForList(int beginIndex, int pageSize) throws SQLException {
 		ResultSet rs = super.query(beginIndex, pageSize);
-		List<Sendgoods> li = new ArrayList<>();
+		List<GoodsShow> li = new ArrayList<>();
 		while (rs.next()) {
-			Sendgoods s=new Sendgoods();
+			GoodsShow s=new GoodsShow();
 			s.setId(rs.getInt("id"));
 			s.setOrigin_place(rs.getString("origin_place"));
 			s.setDestination(rs.getString("destination"));
