@@ -47,7 +47,7 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
-<form actiong="SendgoodController?action=insert" method="post">
+<form action="SendgoodController?action=insert" method="post">
 <!-- right -->
 <div id=right>
   <div id="user_rbt"><font style="padding-right: 10px;">我要发货</font></div>
@@ -55,7 +55,7 @@
   <table width="866" border="0" cellspacing="0" cellpadding="0" class="user_ta">
   <tr>
     <td width="128" height="45" align="right"><span>*</span>装货地址：</td>
-    <td height="45" colspan="4"><script type="text/javascript" src="js/select.js"></script></td>
+    <td height="45" colspan="4" ><script type="text/javascript" src="js/select.js"></script></td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>卸货地址：</td>
@@ -63,7 +63,7 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>收货电话：</td>
-    <td height="45" colspan="3"><input name="textfield3" type="text" class="u3" id="textfield3" placeholder="请填写" /></td>
+    <td height="45" colspan="3"><input name="phone" type="text" class="u3" id="textfield3" placeholder="请填写" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -76,27 +76,29 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>货物类型：</td>
-    <td height="45" colspan="2"><input name="textfield4" type="text" class="u3" id="textfield4" placeholder="请填写" /></td>
+    <td height="45" colspan="2"><input name="good_type" type="text" class="u3" id="textfield4" placeholder="请填写" /></td>
     <td height="45" align="right"><a href=""><img src="user_img/user1.jpg" alt="" /></a></td>
     <td width="186" height="45"><a href=""></a></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>重量：</td>
-    <td width="204" height="45"><input name="textfield5" type="text" class="u4" id="textfield5" placeholder="请填写" /></td>
+    <td width="204" height="45">
+    <input name="good_weight" type="text" class="u4" id="textfield5" placeholder="请填写" /></td>
     <td width="116" height="45" align="left"><strong>吨</strong></td>
-    <td width="91" align="right">体积：</td>
-    <td width="186" height="45"><input name="textfield6" type="text" class="u4" id="textfield6" placeholder="请填写" /></td>
-    <td width="141"><strong>m（请任选一项）</strong></td>
   </tr>
   <tr>
     <td width="128" height="45" align="right">所需车型：</td>
-    <td width="204" height="45"><select name="select6" id="select6" class="u1">
-      <option>请选择</option>
+    <td width="204" height="45"><select name="car_type" id="select6" class="u1">
+      <option>大货车</option>
+      <option>小货车</option>
+   
     </select></td>
-    <td height="45" colspan="2" align="right">所需车长：</td>
-    <td width="186" height="45"><select name="select5" id="select5" class="u1">
-      <option>请选择</option>
+    <td height="45" colspan="2" align="right">所需车长(单位米)：</td>
+    <td width="186" height="45"><select name="car_length" id="select5" class="u1">
+      <option>5</option>
+        <option>7</option>
+     
     </select></td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -109,19 +111,19 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right">意愿价：</td>
-    <td width="204" height="45"><input name="textfield7" type="text" class="u4" id="textfield7" placeholder="请填写" /></td>
+    <td width="204" height="45"><input name="price" type="text" class="u4" id="textfield7" placeholder="请填写" /></td>
     <td height="45" colspan="2"><strong>元</strong></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="92" align="right">留言：</td>
-    <td height="92" colspan="4"><textarea name="textarea" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
+    <td height="92" colspan="4"><textarea name="message" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45">&nbsp;</td>
-    <td height="45" colspan="3"><input type="button" value="立刻发布" class="btn_1" /></td>
+    <td height="45" colspan="3"><input type="submit" value="立刻发布" class="btn_1" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>

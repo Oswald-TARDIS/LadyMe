@@ -29,6 +29,14 @@ public class Goods extends GoodsShow implements BaseBean{
 		 
 	}
  
+public float getCar_length() {
+	return car_length;
+}
+
+public void setCar_length(float car_length) {
+	this.car_length = car_length;
+}
+
 public String getPhone() {
 	return phone;
 }
@@ -47,12 +55,7 @@ public String getCar_type() {
 public void setCar_type(String car_type) {
 	this.car_type = car_type;
 }
-public float getCat_length() {
-	return car_length;
-}
-public void setCat_length(float cat_length) {
-	this.car_length = cat_length;
-}
+ 
 public float getPrice() {
 	return price;
 }

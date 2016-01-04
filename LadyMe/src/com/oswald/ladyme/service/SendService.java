@@ -43,6 +43,17 @@ public class SendService {
 	}
 	public void insert() {
 		Goods good=new Goods();
-		good.setId((int)request.getAttribute("id"));
+		System.out.println((String)request.getAttribute("originPlace"));
+		System.out.println((String)request.getAttribute("good_weight"));
+		good.setOrigin_place((String)request.getAttribute("originPlace"));
+		good.setDestination((String)request.getAttribute("destination"));
+		good.setPhone((String)request.getAttribute("phone"));
+		good.setGood_type((String)request.getAttribute("good_type"));
+		good.setGood_weight(Float.parseFloat((String)request.getAttribute("good_weight")));
+		good.setCar_type((String)request.getAttribute("car_length"));
+		good.setCar_length(Float.parseFloat((String)request.getAttribute("car_length")));
+		good.setPrice(Float.parseFloat((String)request.getAttribute("price")));
+		good.setMessage((String)request.getAttribute("message"));
+		//sgdi.insert(good);
 	}
 }

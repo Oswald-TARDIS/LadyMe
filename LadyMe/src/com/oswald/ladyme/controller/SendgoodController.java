@@ -34,7 +34,6 @@ public class SendgoodController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
 		String action = request.getParameter("action");
-		System.out.println(action);
 		SendService service =new SendService(request, response);
 		int flag = 0;
 		if (action.equals("query")) flag = 0;
@@ -45,6 +44,7 @@ public class SendgoodController extends HttpServlet {
 				service.query(this.getServletContext());
 				break;
 			case 1:
+				service.insert();
 				break;
 			default:
 				;
