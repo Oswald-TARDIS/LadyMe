@@ -1,8 +1,11 @@
 package com.oswald.ladyme.service;
 
 import java.io.IOException;
+import java.sql.SQLData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -41,19 +44,23 @@ public class SendService {
 		application.setAttribute("infoVehicle", li2);
 		response.sendRedirect("index.jsp");
 	}
-	public void insert() {
+	public void insert() throws IOException {
 		Goods good=new Goods();
-		System.out.println((String)request.getAttribute("originPlace"));
-		System.out.println((String)request.getAttribute("good_weight"));
-		good.setOrigin_place((String)request.getAttribute("originPlace"));
-		good.setDestination((String)request.getAttribute("destination"));
-		good.setPhone((String)request.getAttribute("phone"));
-		good.setGood_type((String)request.getAttribute("good_type"));
-		good.setGood_weight(Float.parseFloat((String)request.getAttribute("good_weight")));
-		good.setCar_type((String)request.getAttribute("car_length"));
-		good.setCar_length(Float.parseFloat((String)request.getAttribute("car_length")));
-		good.setPrice(Float.parseFloat((String)request.getAttribute("price")));
-		good.setMessage((String)request.getAttribute("message"));
-		//sgdi.insert(good);
+		good.setUserID((String)request.getParameter("userID"));
+		good.setOrigin_place((String)request.getParameter("originPlace"));
+		good.setDestination((String)request.getParameter("destination"));
+		good.setPhone((String)request.getParameter("phone"));
+		good.setGood_type((String)request.getParameter("good_type"));
+		good.setGood_weight(Float.parseFloat((String)request.getParameter("good_weight")));
+		good.setCar_type((String)request.getParameter("car_type"));
+		good.setCar_length(Float.parseFloat((String)request.getParameter("car_length")));
+		good.setPrice(Float.parseFloat((String)request.getParameter("price")));
+		good.setMessage((String)request.getParameter("message"));
+		Date date=new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String time=sdf.format(date);
+		good.setTime(time);
+		sgdi.insert(good);
+		response.sendRedirect("sendgood_success.jsp");
 	}
 }

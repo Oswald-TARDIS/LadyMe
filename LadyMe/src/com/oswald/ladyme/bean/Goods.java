@@ -9,7 +9,7 @@ public class Goods extends GoodsShow implements BaseBean{
 	protected float car_length;
 	protected float price;
 	protected String message;
- 
+    protected String userID;
  
  @Override
 	public HashMap<String, Object> toMap() {
@@ -25,10 +25,19 @@ public class Goods extends GoodsShow implements BaseBean{
 		map.put("car_length",car_length);
 		map.put("price",price);
 		map.put("message",message);
+		map.put("userID",userID);
 		return map;
 		 
 	}
  
+public String getUserID() {
+	return userID;
+}
+
+public void setUserID(String userID) {
+	this.userID = userID;
+}
+
 public float getCar_length() {
 	return car_length;
 }

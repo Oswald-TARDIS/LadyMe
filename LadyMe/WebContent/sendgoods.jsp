@@ -35,6 +35,7 @@
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
 <a href="sendgoods.jsp"><div id=tou_li_now >我要发货</div></a>
+<a href="#"><div id=tou_li >已发布货源</div></a>
 <a href="#"><div id=tou_li >待确认订单</div></a>
 <a href="#"><div id=tou_li >进行中订单</div></a>
 <a href="#"><div id=tou_li >历史订单</div></a>
@@ -48,6 +49,7 @@
 </div>
 <div id=div_x></div>
 <form action="SendgoodController?action=insert" method="post">
+<input type="hidden" value="${user.ID}" name="userID">
 <!-- right -->
 <div id=right>
   <div id="user_rbt"><font style="padding-right: 10px;">我要发货</font></div>
@@ -83,7 +85,7 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>重量：</td>
-    <td width="204" height="45">
+    <td >
     <input name="good_weight" type="text" class="u4" id="textfield5" placeholder="请填写" /></td>
     <td width="116" height="45" align="left"><strong>吨</strong></td>
   </tr>
@@ -118,7 +120,7 @@
   </tr>
   <tr>
     <td width="128" height="92" align="right">留言：</td>
-    <td height="92" colspan="4"><textarea name="message" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
+    <td height="92" colspan="4"><input name="message" id="textarea"  class="u5"/></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
@@ -135,11 +137,7 @@
     <td width="141">&nbsp;</td>
   </tr>
   </table>
-
-  
   </div>
-  
-  
   </div>
   </form>
   

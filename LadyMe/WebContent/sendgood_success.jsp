@@ -51,7 +51,7 @@
 <div id=right>
     <div id="user_rbt"><font style="padding-right: 10px;">密码修改</font></div>
      <div id=right_r>
-        <P class="us_t1"><img src="img/tu1.png" />&nbsp;<font style="font-size: 30px;">密码修改成功，请您牢记新密码！</font></P>
+        <P class="us_t1"><img src="img/tu1.png" />&nbsp;<font style="font-size: 30px;">发布货源成功！</font></P>
     </div>
   </div>
 </div>

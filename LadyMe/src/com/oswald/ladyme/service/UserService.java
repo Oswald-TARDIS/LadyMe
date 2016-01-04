@@ -47,7 +47,7 @@ public class UserService {
 		if(rs.next()){
 			if(rs.getString("passwd").equals(pwd))
 			{
-				user.setID(ID);
+				user.setID(rs.getString("id"));
 				user.setName(rs.getString("name"));
 				session.setAttribute("user", user);
 				session.setAttribute("logError", null);
@@ -59,7 +59,7 @@ public class UserService {
 		}else if(rs2.next()){
 			if(rs2.getString("passwd").equals(pwd))
 			{
-				user.setID(ID);
+				user.setID(rs2.getString("id"));
 				user.setName(rs2.getString("name"));
 				session.setAttribute("user", user);
 				session.setAttribute("logError", null);
