@@ -1,14 +1,13 @@
 package com.oswald.ladyme.bean;
 
-import java.util.HashMap;
 
-public class VehicleShow implements BaseBean{
-	int id;
-	String origin_place;
-	String destination;
-	String plate_num;
-	float load_weight;
-	float car_length;
+public class VehicleShow{
+	protected int id;
+	protected String origin_place;
+	protected String destination;
+	protected String plate_num;
+	protected float load_weight;
+	protected float car_length;
 	
 	public int getId() {
 		return id;
@@ -58,17 +57,6 @@ public class VehicleShow implements BaseBean{
 		this.car_length = car_length;
 	}
 
-	@Override
-	public HashMap<String, Object> toMap() {
-		// TODO Auto-generated method stub
-		HashMap<String,Object> map=new HashMap<>();
-		map.put("id", id);
-		map.put("origin_place", origin_place);
-		map.put("destination", destination);
-		map.put("plate_num", plate_num);
-		map.put("load_weight", load_weight);
-		map.put("car_length", car_length);
-		return map;
-	}
+	
 
 }

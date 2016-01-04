@@ -26,5 +26,5 @@ public class SendgoodDaoImpl extends BaseDaoImpl{
 		}
 		return li;
 	}
-
+	
 }
