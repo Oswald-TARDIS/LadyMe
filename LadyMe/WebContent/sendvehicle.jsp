@@ -45,6 +45,8 @@
 <a href="#"><div id=tou_li >积分兑换</div></a>
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
+<form action="SendController?action=insertV" method="post">
+<input type="hidden" value="${user.ID}" name="userID">
 <div id=div_x></div>
 <!-- right -->
 <div id=right>
@@ -52,50 +54,24 @@
   <div id=right_rp>
   <table width="866" border="0" cellspacing="0" cellpadding="0" class="user_ta">
   <tr>
-    <td width="128"  height="45" align="right"><span>*</span>始发地：</td>
-    <td width="204"  height="45" align="left"><select name="select" id="select" class="u1">
-      <option>河南省</option>
-    </select></td>
-    <td height="45" colspan="2" align="left"><select name="select" id="select" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="186"  height="45" align="left"><select name="select" id="select" class="u1">
-      <option>请选择</option>
-    </select></td>
+    <td width="128" height="45" align="right"><span>*</span>装货地址：</td>
+    <td height="45" colspan="4"><script type="text/javascript" src="js/select.js"></script></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right">装货地址：</td>
-    <td height="45" colspan="4"><input type="text" name="textfield" id="textfield" class="u2" /></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45" align="right"><span>*</span>目的地：</td>
-    <td width="204" height="45"><select name="select2" id="select2" class="u1">
-      <option>河南省</option>
-    </select></td>
-    <td height="45" colspan="2"><select name="select3" id="select3" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="186" height="45"><select name="select4" id="select4" class="u1">
-      <option>请选择</option>
-    </select></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45" align="right">卸货地址：</td>
-    <td height="45" colspan="4"><input name="textfield2" type="text" class="u2" id="textfield2" value="请填写" /></td>
+    <td width="128" height="45" align="right"><span>*</span>卸货地址：</td>
+    <td height="45" colspan="4"><script type="text/javascript" src="js/select2.js"></script></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>电话：</td>
-    <td height="45" colspan="3"><input name="textfield3" type="text" class="u3" id="textfield3" value="请填写" /></td>
+    <td height="45" colspan="3"><input name="phone" type="text" class="u3" id="textfield3" value="请填写" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>车牌号：</td>
-    <td height="45" colspan="3"><input name="textfield3" type="text" class="u3" id="textfield3" value="请填写" /></td>
+    <td height="45" colspan="3"><input name="plate_num" type="text" class="u3" id="textfield3" value="请填写" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -107,26 +83,21 @@
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right"><span>*</span>货物类型：</td>
-    <td height="45" colspan="2"><input name="textfield4" type="text" class="u3" id="textfield4" value="请填写" /></td>
-    <td height="45" align="right"><a href=""><img src="user_img/user1.jpg" alt="" /></a></td>
-    <td width="186" height="45"><a href=""></a></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
     <td width="128" height="45" align="right"><span>*</span>承重：</td>
-    <td width="204" height="45"><input name="textfield5" type="text" class="u4" id="textfield5" value="请填写" /></td>
+    <td width="204" height="45"><input name="load_weight" type="text" class="u4" id="textfield5" value="请填写" /></td>
     <td width="116" height="45" align="left"><strong>吨</strong></td>
      
   </tr>
   <tr>
     <td width="128" height="45" align="right">车型：</td>
-    <td width="204" height="45"><select name="select6" id="select6" class="u1">
-      <option>请选择</option>
+    <td width="204" height="45"><select name="car_type" id="select6" class="u1">
+     <option>大货车</option>
+      <option>小货车</option>
     </select></td>
     <td height="45" colspan="2" align="right">车长：</td>
-    <td width="186" height="45"><select name="select5" id="select5" class="u1">
-      <option>请选择</option>
+    <td width="186" height="45"><select name="car_length" id="select5" class="u1">
+        <option>5</option>
+        <option>7</option>
     </select></td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -138,20 +109,13 @@
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right">意愿价：</td>
-    <td width="204" height="45"><input name="textfield7" type="text" class="u4" id="textfield7" value="请填写" /></td>
-    <td height="45" colspan="2"><strong>元</strong></td>
-    <td width="186" height="45">&nbsp;</td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
     <td width="128" height="92" align="right">留言：</td>
-    <td height="92" colspan="4"><textarea name="textarea" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
+    <td height="92" colspan="4"><textarea name="message" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45">&nbsp;</td>
-    <td height="45" colspan="3"><input type="button" value="立刻发布" class="btn_1" /></td>
+    <td height="45" colspan="3"><input type="submit" value="立刻发布" class="btn_1" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -168,7 +132,7 @@
   
   
   </div>
-  
+  </form>
 </div>
 </body>
 </html>

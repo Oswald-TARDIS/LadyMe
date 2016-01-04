@@ -48,7 +48,7 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
-<form action="SendgoodController?action=insert" method="post">
+<form action="SendController?action=insert" method="post">
 <input type="hidden" value="${user.ID}" name="userID">
 <!-- right -->
 <div id=right>
@@ -120,7 +120,7 @@
   </tr>
   <tr>
     <td width="128" height="92" align="right">留言：</td>
-    <td height="92" colspan="4"><input name="message" id="textarea"  class="u5"/></td>
+    <td height="92" colspan="4"><textarea name="message" id="textarea" cols="45" rows="5"  class="u5"></textarea></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>

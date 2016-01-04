@@ -23,7 +23,7 @@
 <c:redirect url="NewsController?action=query"/>
 </c:if>
 <c:if test="${empty infoSupply||empty infoVehicle}">
-<c:redirect url="SendgoodController?action=query"/>
+<c:redirect url="SendController?action=query"/>
 </c:if>
 <c:if test="${user!=null}">
 <div id=div_head>

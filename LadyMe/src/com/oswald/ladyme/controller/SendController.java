@@ -13,14 +13,14 @@ import com.oswald.ladyme.service.SendService;
 /**
  * Servlet implementation class SendgoodController
  */
-@WebServlet("/SendgoodController")
-public class SendgoodController extends HttpServlet {
+@WebServlet("/SendController")
+public class SendController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SendgoodController() {
+    public SendController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,6 +46,7 @@ public class SendgoodController extends HttpServlet {
 		int flag = 0;
 		if (action.equals("query")) flag = 0;
 		if(action.equals("insert")) flag =1;
+		if(action.equals("insertV")) flag=2;
 		try {
 			switch (flag) {
 			case 0:
@@ -55,7 +56,7 @@ public class SendgoodController extends HttpServlet {
 				service.insert();
 				break;
 			default:
-				;
+				service.insertV();;
 				break;
 			}
 		} catch (SQLException e) {

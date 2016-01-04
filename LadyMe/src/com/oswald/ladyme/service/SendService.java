@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.oswald.ladyme.bean.News;
+import com.oswald.ladyme.bean.Vehicle;
 import com.oswald.ladyme.bean.Goods;
 import com.oswald.ladyme.bean.GoodsShow;
 import com.oswald.ladyme.bean.VehicleShow;
@@ -61,6 +62,26 @@ public class SendService {
 		String time=sdf.format(date);
 		good.setTime(time);
 		sgdi.insert(good);
+		response.sendRedirect("sendgood_success.jsp");
+	}
+
+	public void insertV() throws IOException {
+		// TODO Auto-generated method stub
+		Vehicle vehicle=new Vehicle();
+		vehicle.setUserID((String)request.getParameter("userID"));
+		vehicle.setOrigin_place((String)request.getParameter("originPlace"));
+		vehicle.setDestination((String)request.getParameter("destination"));
+		vehicle.setPlate_num((String)request.getParameter("plate_num"));
+		vehicle.setPhone((String)request.getParameter("phone"));
+		vehicle.setLoad_weight(Float.parseFloat(request.getParameter("phone")));
+		vehicle.setCar_type((String)request.getParameter("car_type"));
+		vehicle.setCar_length(Float.parseFloat((String)request.getParameter("car_length")));
+		vehicle.setMessage((String)request.getParameter("message"));
+		Date date=new Date();
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String time=sdf.format(date);
+		vehicle.setTime(time);
+		svdi.insert(vehicle);
 		response.sendRedirect("sendgood_success.jsp");
 	}
 }
