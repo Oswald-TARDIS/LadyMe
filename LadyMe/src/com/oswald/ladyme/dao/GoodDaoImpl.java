@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.oswald.ladyme.bean.GoodsShow;
 
-public class SendgoodDaoImpl extends BaseDaoImpl{
+public class GoodDaoImpl extends BaseDaoImpl{
 	public final static String theTable="send_good";
-	public SendgoodDaoImpl() {
+	public GoodDaoImpl() {
 		super(theTable);
 		// TODO Auto-generated constructor stub
 	}

@@ -14,20 +14,20 @@ import com.oswald.ladyme.bean.GoodsShow;
 import com.oswald.ladyme.bean.VehicleShow;
 import com.oswald.ladyme.dao.CnewsDaoImpl;
 import com.oswald.ladyme.dao.InnewsDaoImpl;
-import com.oswald.ladyme.dao.SendgoodDaoImpl;
-import com.oswald.ladyme.dao.SendvehicleDaoImpl;
+import com.oswald.ladyme.dao.GoodDaoImpl;
+import com.oswald.ladyme.dao.VehicleDaoImpl;
 
 public class SendService {
-	SendgoodDaoImpl sgdi;
-	SendvehicleDaoImpl svdi;
+	GoodDaoImpl sgdi;
+	VehicleDaoImpl svdi;
 	HttpServletRequest request;
 	HttpServletResponse response;
 
 	public SendService(HttpServletRequest request, HttpServletResponse response) {
 		this.request = request;
 		this.response = response;
-		svdi = new SendvehicleDaoImpl();
-		sgdi = new SendgoodDaoImpl();
+		svdi = new VehicleDaoImpl();
+		sgdi = new GoodDaoImpl();
 	}
 
 	public void query(ServletContext application) throws SQLException, IOException {

@@ -7,9 +7,9 @@ import java.util.List;
 
 import com.oswald.ladyme.bean.VehicleShow;
 
-public class SendvehicleDaoImpl extends BaseDaoImpl{
+public class VehicleDaoImpl extends BaseDaoImpl{
 	public final static String theTable="send_vehicle";
-	public SendvehicleDaoImpl() {
+	public VehicleDaoImpl() {
 		super(theTable);
 		// TODO Auto-generated constructor stub
 	}
