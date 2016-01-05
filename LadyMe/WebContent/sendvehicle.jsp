@@ -48,7 +48,7 @@
 <a href="#"><div id=tou_li >我的消息</div></a>
 <a href="#"><div id=tou_li >我的收藏</div></a>
 <a href="#"><div id=tou_li >积分兑换</div></a>
-<a href="#"><div id=tou_li >我的消息</div></a>   
+  
 </div>
 <form action="SendController?action=insertV" method="post">
 <input type="hidden" value="${user.ID}" name="userID">
