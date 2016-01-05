@@ -1,8 +1,10 @@
+<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.oswald.ladyme.bean.*" import="com.oswald.ladyme.dao.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,11 +16,9 @@
 <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
- 
 <title>LadyMe</title>
 </head>
 <body id=body_main>
-
 <div id=div_head>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>首页</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>公司新闻</div></a>
@@ -84,14 +84,41 @@
 <span class="us_td_2"><img src="user_img/pic3.jpg" />认证成功可获得更多信用积分！</span>
 </div>
 <c:if test="${user.type==1}">
-   <iframe name="toppage" frameborder="no" border="0" width=100% height=500px marginheight=0 src="cuser_prove.jsp" ></iframe>
+   <h3>车主认证</h3>
+   <form action="UserController?action=Cprove" method="post"name="">
+   <input type="hidden" name=id value="${user.ID}">
+性别：<input type="text" name="sex" value=""/><br>
+照片：<input type="text" name="photo" value=""/><br>
+身份证照片：<input type="text" name="IDphoto" value=""/><br>
+身份证号码：<input type="text" name="IDnumber" value=""/><br>
+联系电话：<input type="text" name="phone" value=""/><br>
+地址：<input type="text" name="origin_place" value=""/><br>
+车型：<input type="text" name="car_type" value=""/><br>
+车牌：<input type="text" name="plate_num" value=""/><br>
+载重：<input type="text" name="load_weight" value=""/><br>
+车长：<input type="text" name="car_length" value=""/><br>
+驾驶证：<input type="text" name="DriverLicense" value=""/><br>
+行车证：<input type="text" name="DrivingLicense" value=""/><br>
+   <input type="submit" value="认证"/>
+   <input type="reset" value="重置"/>
+   </form>
 </c:if>
 <c:if test="${user.type==0}">
-   <iframe name="toppage" frameborder="no" border="0" width=100% height=500px marginwidth=0 marginheight=0 src="huser_prove.jsp" ></iframe>
+<h3>货主认证</h3>
+      <form action="UserController?action=Hprove" method="post"name="">
+   <input type="hidden" name=id value="${user.ID}">
+性别：<input type="text" name="sex" value=""/><br>
+照片：<input type="text" name="photo" value=""/><br>
+身份证照片：<input type="text" name="IDphoto" value=""/><br>
+身份证号码：<input type="text" name="IDnumber" value=""/><br>
+联系电话：<input type="text" name="phone" value=""/><br>
+地址：<input type="text" name="origin_place" value=""/><br>
+营运证：<input type="text" name="OperateLicense" value=""/><br>
+    <input type="submit" value="认证"/>
+   <input type="reset" value="重置"/>
+   </form>
 </c:if>
-   <span>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color:red;">温馨提示：认证成功后，信息不可随意更改，如需更改，请联系客服。</font></span>
      </div>
 </div>
-
 </body>
 </html>
