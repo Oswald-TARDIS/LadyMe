@@ -29,7 +29,8 @@ public class SendService {
 	VehicleDaoImpl svdi;
 	HttpServletRequest request;
 	HttpServletResponse response;
-
+	public final static int pageSize = 10; 
+	
 	public SendService(HttpServletRequest request, HttpServletResponse response) {
 		this.request = request;
 		this.response = response;
@@ -94,5 +95,22 @@ public class SendService {
 		vehicle.setTime(time);
 		svdi.insert(vehicle);
 		response.sendRedirect("sendgood_success.jsp");
+	}
+
+	public void getVehicle() throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		int page=Integer.valueOf(request.getParameter("page"));
+		List<VehicleShow> li=svdi.queryForList(pageSize*(page-1), pageSize);
+		HttpSession session=request.getSession();
+		session.setAttribute("vehiclePage", li);
+		response.sendRedirect("showvehicle.jsp");
+	}
+	public void getGood() throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		int page=Integer.valueOf(request.getParameter("page"));
+		List<GoodsShow> li=sgdi.queryForList(pageSize*(page-1), pageSize);
+		HttpSession session=request.getSession();
+		session.setAttribute("goodPage", li);
+		response.sendRedirect("showgoods.jsp");
 	}
 }

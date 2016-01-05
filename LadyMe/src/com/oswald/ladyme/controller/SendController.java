@@ -48,6 +48,8 @@ public class SendController extends HttpServlet {
 		if(action.equals("insert")) flag =1;
 		if(action.equals("insertV")) flag=2;
 		if(action.equals("queryall")) flag=3;
+		if(action.equals("getVehicle")) flag=4;
+		if(action.equals("getGood")) flag=5;
 		try {
 			switch (flag) {
 			case 0:
@@ -61,6 +63,13 @@ public class SendController extends HttpServlet {
 				break;
 			case 3:
 				service.queryall();
+				break;
+			case 4:
+				service.getVehicle();
+				break;
+			case 5:
+				service.getGood();
+				break;
 			default:
 				
 				break;

@@ -66,8 +66,8 @@
     		<div style="width:2%;height:38px;float:left;background:#3169ee"></div>
     		<font class=font_title style="text-align:left;">货源中心</font>
     		<font style="color:#aaa;">Center of Supply</font>
-    		<font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
-    		<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font>
+    		<a href="showgoods.jsp" style="color:#444;"><font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
+    		<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font></a>
     		<hr noshade size=1 align=center width=100% color="#3169ee">
     		<table style="width:100%">
     		<tr>
@@ -93,8 +93,8 @@
     		<div style="width:2%;height:38px;float:left;background:#ec9640"></div>
     		<font class=font_title style="text-align:left;">车源中心</font>
     		<font style="color:#aaa;">Center of Vehicle</font>
-    		<font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
-    		<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font>
+    		<a href="showvehicle.jsp" style="color:#444;"><font style="color:#aaa;float:right;position: relative;top:14px;font-size:10px;">More</font>
+    		<font style="float:right; font-size:15px;text-align:right;position: relative;top:11px;">更多</font></a>
     		<hr noshade size=1 align=center width=100% color="#ec9640">
     		<table style="width:100%">
     		<tr>
