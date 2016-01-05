@@ -33,7 +33,12 @@
 <div id=whole>
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
-<a href="sendgoods.jsp"><div id=tou_li  >我要发货</div></a>
+ <c:if test="${user.type==0}">
+   <a href="sendgoods.jsp"><div id=tou_li  >我要发货</div></a>
+</c:if>
+<c:if test="${user.type==1}">
+   <a href="sendvehicle.jsp"><div id=tou_li  >我要发车</div></a>
+</c:if>
 <a href="personal_goodshow.jsp"><div id=tou_li >已发布货源</div></a>
 <a href="#"><div id=tou_li >待确认订单</div></a>
 <a href="#"><div id=tou_li >进行中订单</div></a>
@@ -76,49 +81,16 @@
   </tr>
      </table>
 <div class="user_td">
-<span class="us_td_1">个人认证：</span>
 <span class="us_td_2"><img src="user_img/pic3.jpg" />认证成功可获得更多信用积分！</span>
 </div>
-     
-  <table width="866" border="0" cellspacing="0" cellpadding="0" class="user_ta">
-  <tr>
-    <td width="128"  height="45" align="right"><span>*</span>姓名：</td>
-    <td width="204"  height="45" align="left"><input type="text" name="textfield" id="textfield" class="u4" /></td>
-    <td width="207" height="45" align="left">&nbsp;</td>
-    <td width="186"  height="45" align="left">&nbsp;</td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45" align="right">身份证号：</td>
-    <td height="45" colspan="3"><input type="text" name="textfield" id="textfield" class="u2" /></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="111" align="right">身份证照：</td>
-    <td width="204" height="111" style="padding-left:20px;"><img src="img/pic_0.jpg" /></td>
-    <td height="111"><strong>点击上传图片</strong></td>
-    <td width="186" height="111">&nbsp;</td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="41" align="right">&nbsp;</td>
-    <td height="41" colspan="3"><span>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color:red;">温馨提示：认证成功后，信息不可随意更改，如需更改，请联系客服。</font></span></td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45">&nbsp;</td>
-    <td height="45" colspan="2"><input type="button" value="立刻认证" class="btn_1" /></td>
-    <td width="186" height="45">&nbsp;</td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45">&nbsp;</td>
-    <td width="204" height="45">&nbsp;</td>
-    <td height="45">&nbsp;</td>
-    <td width="186" height="45">&nbsp;</td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  </table>   </div>
+<c:if test="${user.type==1}">
+   <iframe name="toppage" frameborder="no" border="0" width=100% height=500px marginheight=0 src="cuser_prove.jsp" ></iframe>
+</c:if>
+<c:if test="${user.type==0}">
+   <iframe name="toppage" frameborder="no" border="0" width=100% height=500px marginwidth=0 marginheight=0 src="huser_prove.jsp" ></iframe>
+</c:if>
+   <span>&nbsp;&nbsp;&nbsp;&nbsp;<font style="color:red;">温馨提示：认证成功后，信息不可随意更改，如需更改，请联系客服。</font></span>
+     </div>
 </div>
 
 </body>

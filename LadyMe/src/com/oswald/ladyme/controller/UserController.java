@@ -68,6 +68,10 @@ public class UserController extends HttpServlet {
 				service.logIn(request, response);
 			if (action.equals("logout"))
 				service.logOut(request, response);
+			if(action.equals("Hprove"))
+				service.cuser_prove(request, response);
+			if(action.equals("Cprove"))
+				service.huser_prove(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

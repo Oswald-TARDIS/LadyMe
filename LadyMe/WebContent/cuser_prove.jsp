@@ -8,7 +8,8 @@
 </head>
 <body>
 <h3>车主认证</h3>
-   <form action=" " method="post"name="">
+   <form action="UserController?action=Cprove" method="post"name="">
+   <input type="hidden" name=id value="${user.ID}">
 性别：<input type="text" name="sex" value=""/><br>
 照片：<input type="text" name="photo" value=""/><br>
 身份证照片：<input type="text" name="IDphoto" value=""/><br>
@@ -21,7 +22,7 @@
 车长：<input type="text" name="car_length" value=""/><br>
 驾驶证：<input type="text" name="DriverLicense" value=""/><br>
 行车证：<input type="text" name="DrivingLicense" value=""/><br>
-   <input type="button" value="认证" onClick="validate()"/>
+   <input type="submit" value="认证"/>
    <input type="reset" value="重置"/>
    
    </form>

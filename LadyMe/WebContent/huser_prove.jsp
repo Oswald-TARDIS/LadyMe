@@ -8,7 +8,8 @@
 </head>
 <body>
 <h3>货主认证</h3>
-   <form action=" " method="post"name="">
+   <form action="UserController?action=Hprove" method="post"name="">
+   <input type="hidden" name=id value="${user.ID}">
 性别：<input type="text" name="sex" value=""/><br>
 照片：<input type="text" name="photo" value=""/><br>
 身份证照片：<input type="text" name="IDphoto" value=""/><br>
@@ -16,7 +17,7 @@
 联系电话：<input type="text" name="phone" value=""/><br>
 地址：<input type="text" name="origin_place" value=""/><br>
 营运证：<input type="text" name="OperateLicense" value=""/><br>
-   <input type="button" value="认证" onClick="validate()"/>
+    <input type="submit" value="认证"/>
    <input type="reset" value="重置"/>
    </form>
 </body>

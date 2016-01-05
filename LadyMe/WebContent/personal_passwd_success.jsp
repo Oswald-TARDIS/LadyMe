@@ -33,7 +33,12 @@
 <div id=whole>
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
-<a href=""><div id=tou_li  >我要发货</div></a>
+ <c:if test="${user.type==0}">
+   <a href="sendgoods.jsp"><div id=tou_li  >我要发货</div></a>
+</c:if>
+<c:if test="${user.type==1}">
+   <a href="sendvehicle.jsp"><div id=tou_li  >我要发车</div></a>
+</c:if>
 <a href="personal_goodshow.jsp"><div id=tou_li >已发布货源</div></a>
 <a href="#"><div id=tou_li >待确认订单</div></a>
 <a href="#"><div id=tou_li >进行中订单</div></a>

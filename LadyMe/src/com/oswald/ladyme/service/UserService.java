@@ -137,6 +137,7 @@ public class UserService {
 	}
 
 	public void cuser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String id=request.getParameter("id");
 		String sex = request.getParameter("sex");
 		String photo = request.getParameter("photo");
 		String IDphoto = request.getParameter("IDphoto");
@@ -145,6 +146,7 @@ public class UserService {
 		String origin_place = request.getParameter("origin_place");
 		String OperateLicense = request.getParameter("OperateLicense");
 		CUserProve p=new CUserProve();
+		p.setID(id);
 		p.setSex(sex);
 		p.setPhoto(IDphoto);
 		p.setPhoto(IDphoto);
@@ -159,6 +161,7 @@ public class UserService {
 	}
 	
 	public void huser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String id=request.getParameter("id");
 		String sex = request.getParameter("sex");
 		String photo = request.getParameter("photo");
 		String IDphoto = request.getParameter("IDphoto");
@@ -172,6 +175,7 @@ public class UserService {
 		String DriverLicense = request.getParameter("DriverLicense");
 		String DrivingLicense = request.getParameter("DrivingLicense");
 		HUserProve p=new HUserProve();
+		p.setID(id);
 		p.setSex(sex);
 		p.setPhoto(IDphoto);
 		p.setPhoto(IDphoto);
