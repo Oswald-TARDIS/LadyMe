@@ -48,13 +48,12 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
-<form action="SendgoodController?action=insert" method="post">
+<form action="SendController?action=queryall" method="post">
 <!-- right -->
 <div id=right>
   <div id="user_rbt"><font style="padding-right: 10px;">我的发货</font></div>
-  <div id=right_rp>
   <c:forEach items="${queryall}" var="qy">
- 
+  <div id=right_rp>
   <table width="866" border="0" cellspacing="0" cellpadding="0" class="user_ta">
   <tr>
     <td width="128" height="45" align="right"><span>*</span>装货地址：</td>
@@ -62,7 +61,7 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>卸货地址：</td>
-   <td height="45" colspan="4">${qy.destination}</script></td>
+   <td height="45" colspan="4">${qy.destination}</td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>收货电话：</td>
@@ -92,6 +91,8 @@
   <tr>
     <td width="128" height="45" align="right">所需车型：</td>
     <td width="204" height="45">${qy.car_type}</td>
+    </tr>
+  <tr>
     <td height="45" colspan="2" align="right">所需车长(单位米)：</td>
     <td width="186" height="45">${qy.car_length}</td>
     <td width="141">&nbsp;</td>
@@ -107,8 +108,6 @@
     <td width="128" height="45" align="right">意愿价：</td>
     <td width="204" height="45">${qy.price}</td>
     <td height="45" colspan="2"><strong>元</strong></td>
-    <td width="186" height="45"></td>
-    <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="92" align="right">留言：</td>
@@ -120,7 +119,7 @@
     <td height="92" colspan="4">{$qy.time}</td>
     <td width="141">&nbsp;</td>
   </tr>
- </c:forEach>
+
   <tr>
     <td width="128" height="45">&nbsp;</td>
     <td width="204" height="45">&nbsp;</td>
@@ -130,6 +129,7 @@
   </tr>
   </table>
   </div>
+  </c:forEach>
   </div>
   </form>
   

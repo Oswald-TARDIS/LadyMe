@@ -48,7 +48,7 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
-<form action="SendgoodController?action=insert" method="post">
+<form action="SendController?action=insert" method="post">
 <input type="hidden" value="${user.ID}" name="userID">
 <!-- right -->
 <div id=right>
