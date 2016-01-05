@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50021
 File Encoding         : 65001
 
-Date: 2015-12-31 17:50:05
+Date: 2016-01-05 08:49:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,11 +42,43 @@ INSERT INTO `co_news` VALUES ('5', '2015双11 那些不能错过的物流数字'
 DROP TABLE IF EXISTS `cp_user`;
 CREATE TABLE `cp_user` (
   `id` int(11) NOT NULL,
+  `sex` varchar(255) default NULL,
+  `photo` varchar(255) default NULL,
+  `IDphoto` varchar(255) default NULL,
+  `IDnumber` varchar(11) default NULL,
+  `phone` varchar(255) default NULL,
+  `car_type` varchar(255) default NULL,
+  `plate_num` varchar(11) default NULL,
+  `load_weight` float(255,0) default NULL,
+  `car_length` float default NULL,
+  `origin_place` varchar(255) default NULL,
+  `DrivingLicense` varchar(255) default NULL,
+  `DriverLicense` varchar(255) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cp_user
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for c_account
+-- ----------------------------
+DROP TABLE IF EXISTS `c_account`;
+CREATE TABLE `c_account` (
+  `id` int(11) NOT NULL,
+  `origin_place` varchar(255) default NULL,
+  `destination` varchar(255) default NULL,
+  `plate_num` varchar(11) default NULL,
+  `load_weight` float default NULL,
+  `car_length` float default NULL,
+  `flag` varchar(255) default NULL,
+  `situation` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of c_account
 -- ----------------------------
 
 -- ----------------------------
@@ -71,11 +103,42 @@ INSERT INTO `c_user` VALUES ('', '', '');
 DROP TABLE IF EXISTS `hp_user`;
 CREATE TABLE `hp_user` (
   `id` int(11) NOT NULL,
+  `sex` varchar(255) default NULL,
+  `photo` varchar(255) default NULL,
+  `IDphoto` varchar(255) default NULL,
+  `IDnumber` varchar(11) default NULL,
+  `phone` varchar(255) default NULL,
+  `origin_place` varchar(255) default NULL,
+  `OperateLicense` varchar(255) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hp_user
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for h_account
+-- ----------------------------
+DROP TABLE IF EXISTS `h_account`;
+CREATE TABLE `h_account` (
+  `id` varchar(255) default NULL,
+  `origin_place` varchar(255) default NULL,
+  `destination` varchar(255) default NULL,
+  `phone` varchar(255) default NULL,
+  `good_type` varchar(255) default NULL,
+  `good_weight` float default NULL,
+  `car_type` varchar(255) default NULL,
+  `car_length` float default NULL,
+  `price` float(10,0) default NULL,
+  `message` varchar(255) default NULL,
+  `time` date default NULL,
+  `flag` varchar(255) default NULL,
+  `situation` varchar(255) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of h_account
 -- ----------------------------
 
 -- ----------------------------
@@ -152,15 +215,21 @@ INSERT INTO `send_good` VALUES ('1', '河南', '青岛', '18839781756', '棉纺'
 DROP TABLE IF EXISTS `send_vehicle`;
 CREATE TABLE `send_vehicle` (
   `id` int(11) NOT NULL auto_increment,
+  `userID` varchar(255) NOT NULL,
   `origin_place` varchar(255) NOT NULL,
   `destination` varchar(255) NOT NULL,
   `plate_num` varchar(255) NOT NULL,
   `load_weight` float NOT NULL,
   `car_length` float NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `car_type` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of send_vehicle
 -- ----------------------------
-INSERT INTO `send_vehicle` VALUES ('1', '河南郑州', '山东青岛', '豫A-88888', '5', '18');
+INSERT INTO `send_vehicle` VALUES ('1', 'H0000', '河南郑州', '山东青岛', '豫A-88888', '5', '18', '15738896844', '2', '120', '');
+INSERT INTO `send_vehicle` VALUES ('2', 'H10007', '浙江杭州', '浙江杭州', '京A-88888', '1.57389e+010', '7', '15738896847', '小货车', '京A-88888', '2016-01-04 16:43');

@@ -12,9 +12,13 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import com.oswald.ladyme.bean.CUser;
+import com.oswald.ladyme.bean.CUserProve;
 import com.oswald.ladyme.bean.HUser;
+import com.oswald.ladyme.bean.HUserProve;
 import com.oswald.ladyme.bean.User;
+import com.oswald.ladyme.dao.CpuserDaoImpl;
 import com.oswald.ladyme.dao.CuserDaoImpl;
+import com.oswald.ladyme.dao.HpuserDaoImpl;
 import com.oswald.ladyme.dao.HuserDaoImpl;
 import com.oswald.ladyme.tools.DataBase;
 
@@ -131,4 +135,59 @@ public class UserService {
 		response.sendRedirect("index.jsp");
 		return;
 	}
+
+	public void cuser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String sex = request.getParameter("sex");
+		String photo = request.getParameter("photo");
+		String IDphoto = request.getParameter("IDphoto");
+		String IDnumber = request.getParameter("IDnumber");
+		String phone = request.getParameter("phone");
+		String origin_place = request.getParameter("origin_place");
+		String OperateLicense = request.getParameter("OperateLicense");
+		CUserProve p=new CUserProve();
+		p.setSex(sex);
+		p.setPhoto(IDphoto);
+		p.setPhoto(IDphoto);
+		p.setIDphoto(IDphoto);
+		p.setIDnumber(IDnumber);
+		p.setPhone(phone);
+		p.setOrigin_place(origin_place);
+		p.setOperateLicense(OperateLicense);
+		CpuserDaoImpl cpdi=new CpuserDaoImpl();
+		cpdi.insert(p);
+		response.sendRedirect("cuser_prove.jsp");
+	}
+	
+	public void huser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		String sex = request.getParameter("sex");
+		String photo = request.getParameter("photo");
+		String IDphoto = request.getParameter("IDphoto");
+		String IDnumber = request.getParameter("IDnumber");
+		String phone = request.getParameter("phone");
+		String origin_place = request.getParameter("origin_place");
+		String car_type = request.getParameter("car_type");
+		String plate_num = request.getParameter("plate_num");
+		float load_weight = Float.valueOf(request.getParameter("load_weight"));
+		float car_length = Float.valueOf(request.getParameter("car_length"));
+		String DriverLicense = request.getParameter("DriverLicense");
+		String DrivingLicense = request.getParameter("DrivingLicense");
+		HUserProve p=new HUserProve();
+		p.setSex(sex);
+		p.setPhoto(IDphoto);
+		p.setPhoto(IDphoto);
+		p.setIDphoto(IDphoto);
+		p.setIDnumber(IDnumber);
+		p.setPhone(phone);
+		p.setOrigin_place(origin_place);
+		p.setCar_type(car_type);
+		p.setPlate_num(plate_num);
+		p.setLoad_weight(load_weight);
+		p.setCar_length(car_length);
+		p.setDriverLicense(DriverLicense);
+		p.setDrivingLicense(DrivingLicense);
+		HpuserDaoImpl hpdi=new HpuserDaoImpl();
+		hpdi.insert(p);
+		response.sendRedirect("huser_prove.jsp");
+	}	
+
 }
