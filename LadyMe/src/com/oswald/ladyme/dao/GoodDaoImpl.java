@@ -5,8 +5,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
 import com.oswald.ladyme.bean.Goods;
 import com.oswald.ladyme.bean.GoodsShow;
+
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 public class GoodDaoImpl extends BaseDaoImpl{
 	public final static String theTable="send_good";
@@ -28,15 +33,15 @@ public class GoodDaoImpl extends BaseDaoImpl{
 		}
 		return li;
 	}
-	public List<Goods>queryallForList() throws SQLException{
-		ResultSet rs = super.query(null,null);
+	public List<Goods>queryallForList(String id) throws SQLException{
+		ResultSet rs = super.query("userID",id);
 		List<Goods> li = new ArrayList<>();
 		while (rs.next()) {
 			Goods s=new Goods();
 			s.setId(rs.getInt("id"));
 			s.setOrigin_place(rs.getString("origin_place"));
 			s.setDestination(rs.getString("destination"));
-			s.setPhone(rs.getString("phnone"));
+			s.setPhone(rs.getString("phone"));
 			s.setGood_type(rs.getString("good_type"));
 			s.setGood_weight(rs.getFloat("good_weight"));
 			s.setCar_type(rs.getString("car_type"));

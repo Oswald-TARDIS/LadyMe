@@ -40,7 +40,7 @@
 <c:if test="${user.type==1}">
    <a href="sendvehicle.jsp"><div id=tou_li  >我要发车</div></a>
 </c:if>
-<a href="personal_goodshow.jsp"><div id=tou_li_now  >已发布货源</div></a>
+<a href="SendController?action=queryall"><div id=tou_li_now  >已发布货源</div></a>
 <a href="#"><div id=tou_li >待确认订单</div></a>
 <a href="#"><div id=tou_li >进行中订单</div></a>
 <a href="#"><div id=tou_li >历史订单</div></a>
@@ -53,6 +53,9 @@
 <a href="#"><div id=tou_li >我的消息</div></a>   
 </div>
 <div id=div_x></div>
+<c:if test="${empty queryall}">
+<c:redirect url="SendController?action=queryall"/>
+</c:if>
 <form action="SendController?action=queryall" method="post">
 <!-- right -->
 <div id=right>
@@ -61,35 +64,29 @@
   <div id=right_rp>
   <table width="866" border="0" cellspacing="0" cellpadding="0" class="user_ta">
   <tr>
-    <td width="128" height="45" align="right"><span>*</span>装货地址：</td>
+    <td width="128" height="45" align="right">装货地址：</td>
     <td height="45" colspan="4" >${qy.origin_place}</td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right"><span>*</span>卸货地址：</td>
+    <td width="128" height="45" align="right">卸货地址：</td>
    <td height="45" colspan="4">${qy.destination}</td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right"><span>*</span>收货电话：</td>
+    <td width="128" height="45" align="right">收货电话：</td>
     <td height="45" colspan="3">${qy.phone}</td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
+  
   <tr>
-    <td width="128" height="45" align="right">&nbsp;</td>
-    <td width="204" height="45">&nbsp;</td>
-    <td height="45" colspan="2">&nbsp;</td>
-    <td width="186" height="45">&nbsp;</td>
-    <td width="141">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="128" height="45" align="right"><span>*</span>货物类型：</td>
+    <td width="128" height="45" align="right">货物类型：</td>
     <td height="45" colspan="2">${qy.good_type}</td>
     <td height="45" align="right"><a href=""><img src="user_img/user1.jpg" alt="" /></a></td>
     <td width="186" height="45"><a href=""></a></td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
-    <td width="128" height="45" align="right"><span>*</span>重量：</td>
+    <td width="128" height="45" align="right">重量：</td>
     <td >${qy.good_weight}</td>
     <td width="116" height="45" align="left"><strong>吨</strong></td>
   </tr>
@@ -104,8 +101,7 @@
   </tr>
   <tr>
     <td width="128" height="111" align="right">货物照片：</td>
-    <td width="204" height="111" style="padding-left:20px;"><img src="img/pic_0.jpg" /></td>
-    <td height="111" colspan="2"><strong>点击上传图片</strong></td>
+    <td width="204" height="111" style="padding-left:20px;"><img src="img/pic_0.jpg" /></td> 
     <td width="186" height="111">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -116,12 +112,12 @@
   </tr>
   <tr>
     <td width="128" height="92" align="right">留言：</td>
-    <td height="92" colspan="4">{$qy.message}</td>
+    <td height="92" colspan="4">${qy.message}</td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="92" align="right">时间</td>
-    <td height="92" colspan="4">{$qy.time}</td>
+    <td height="92" colspan="4">${qy.time}</td>
     <td width="141">&nbsp;</td>
   </tr>
 
@@ -132,6 +128,7 @@
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
+<tr><td colspan="5"><hr noshade size=3 align=center width=100% color="#3169ee"></td></tr>
   </table>
   </div>
   </c:forEach>

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.oswald.ladyme.bean.News;
+import com.oswald.ladyme.bean.User;
 import com.oswald.ladyme.bean.Vehicle;
 import com.oswald.ladyme.bean.Goods;
 import com.oswald.ladyme.bean.GoodsShow;
@@ -48,8 +49,10 @@ public class SendService {
 	}
 	public void queryall() throws SQLException, IOException{
 		List<Goods>li =new ArrayList<>();
+		
 		HttpSession session=request.getSession();
-		li=sgdi.queryallForList();
+		User user=(User) session.getAttribute("user");
+		li=sgdi.queryallForList(user.getID());
 		session.setAttribute("queryall", li);
 		response.sendRedirect("personal_goodshow.jsp");
 	}
