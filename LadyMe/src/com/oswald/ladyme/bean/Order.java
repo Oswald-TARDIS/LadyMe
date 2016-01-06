@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 public class Order implements BaseBean {
 	int id;
-	String Cid;
-	String Cphone;
-	String Hid;
-	String Hphone;
+	String cid;
+	String cphone;
+	String hid;
+	String hphone;
 	String origin_place;
 	String destination;
 	String time;
@@ -17,23 +17,55 @@ public class Order implements BaseBean {
 	public HashMap<String, Object> toMap() {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("id", id);
-		map.put("Cid", Cid);
+		map.put("Cid", cid);
 		map.put("origin_place", origin_place);
 		map.put("destination", destination);
-		map.put("Cphone", Cphone);
-		map.put("Hid", Hid);
-		map.put("Hphone", Hphone);
+		map.put("Cphone", cphone);
+		map.put("Hid", hid);
+		map.put("Hphone", hphone);
 		map.put("time", time);
 		map.put("flag", flag);
 		return map;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCid() {
+		return cid;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
+	public String getCphone() {
+		return cphone;
+	}
+
+	public void setCphone(String cphone) {
+		this.cphone = cphone;
+	}
+
 	public String getHid() {
-		return Hid;
+		return hid;
 	}
 
 	public void setHid(String hid) {
-		Hid = hid;
+		this.hid = hid;
+	}
+
+	public String getHphone() {
+		return hphone;
+	}
+
+	public void setHphone(String hphone) {
+		this.hphone = hphone;
 	}
 
 	public String getOrigin_place() {
@@ -52,56 +84,8 @@ public class Order implements BaseBean {
 		this.destination = destination;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getCid() {
-		return Cid;
-	}
-
-	public void setCid(String Cid) {
-		this.Cid = Cid;
-	}
-
-	public String getCphone() {
-		return Cphone;
-	}
-
-	public void setCphone(String Cphone) {
-		this.Cphone = Cphone;
-	}
-
-	public String getHId() {
-		return Hid;
-	}
-
-	public void setHId(String Hid) {
-		this.Hid = Hid;
-	}
-
-	public String getHphone() {
-		return Hphone;
-	}
-
-	public void setHphone(String Hphone) {
-		this.Hphone = Hphone;
-	}
-
-	public String getDestin() {
-		return destination;
-	}
-
-	public void setDestin(String destination) {
-		this.destination = destination;
-	}
-
 	public String getTime() {
-		return flag;
+		return time;
 	}
 
 	public void setTime(String time) {
@@ -115,5 +99,6 @@ public class Order implements BaseBean {
 	public void setFlag(String flag) {
 		this.flag = flag;
 	}
+	
 
 }
