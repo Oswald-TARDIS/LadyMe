@@ -25,5 +25,9 @@
 		<url-pattern>/sendgoods.jsp</url-pattern>
 		<url-pattern>/sendvehicle.jsp</url-pattern>
 		<url-pattern>/sendgoods_success.jsp</url-pattern>
+		<url-pattern>/showgoods.jsp</url-pattern>
+		<url-pattern>/showvehicle.jsp</url-pattern>
+		<url-pattern>/infogood.jsp</url-pattern>
+		<url-pattern>/infovehicle.jsp</url-pattern>
 	</filter-mapping>
 </web-app>
