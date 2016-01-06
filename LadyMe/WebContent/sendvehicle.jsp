@@ -40,9 +40,9 @@
 <c:if test="${user.type==1}">
    <a href="sendvehicle.jsp"><div id=tou_li  >我要发车</div></a>
 </c:if>
-<a href="#"><div id=tou_li >待确认订单</div></a>
-<a href="#"><div id=tou_li >进行中订单</div></a>
-<a href="#"><div id=tou_li >历史订单</div></a>
+<a href="personal_order_uconfirm.jsp"><div id=tou_li>待确认订单</div></a>
+<a href="personal_order_running.jsp"><div id=tou_li_now >进行中订单</div></a>
+<a href="personal_order_done.jsp"><div id=tou_li >历史订单</div></a>
 <a href="#"><div id=tou >个人设置</div></a>
 <a href="personal.jsp"><div id=tou_li>会员认证</div></a>
 <a href="personal_password.jsp"><div id=tou_li >密码修改</div></a>

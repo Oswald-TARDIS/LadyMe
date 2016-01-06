@@ -31,6 +31,12 @@
 	<a href=UserController?action=logout class=guide_ahref><div id=div_guide_right>注销</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now style="float:right;">会员中心</div></a>
 </div>
+<c:if test="${empty selectRunning}">
+<c:redirect url="OrderController?action=selectRunning"/>
+</c:if>
+<c:if test="${empty selectArrive}">
+<c:redirect url="OrderController?action=selectArrive"/>
+</c:if>
 <div id=whole>
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
@@ -55,25 +61,53 @@
 <div id=div_x></div>
 <!-- right -->
 <div id=right>
+
     <div id="user_rbt"><font style="padding-right: 10px;">进行中订单</font></div>
      <div>
      
     		<table style="width:100%">
     		<tr>
-    			<td style="width:25%;text-align: center;">始发地</td>
-    			<td style="width:25%;text-align: center;">目的地</td>
-    			<td style="width:15%;text-align: center;">车牌号</td>
-    			<td style="width:15%;text-align: center;">承重/吨</td>
-    			<td style="width:10%;text-align: center;">车长/米</td>		
-    			<td style="width:10%;text-align: center;">操作</td>
+    			<td style="width:25%;text-align: center;">订单号</td>
+    			<td style="width:25%;text-align: center;">运货车主ID</td>
+    			<td style="width:15%;text-align: center;">运货车主电话</td>
+    			<td style="width:15%;text-align: center;">起始地</td>
+    			<td style="width:10%;text-align: center;">卸货地</td>		
+    			<td style="width:10%;text-align: center;">订单时间</td>
     		</tr>
-    		<c:forEach items="${infoVehicle}" var="iV">
+    		<c:forEach items="${selectRunning}" var="iV">
     		<tr>
-   				<td style="text-align: center;">${iV.origin_place}</td>
+   				<td style="text-align: center;">${iV.id}</td>
+    			<td style="text-align: center;">${iV.Cid}</td>
+    			<td style="text-align: center;">${iV.Cphone}</td>
+    			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
-    			<td style="text-align: center;">${iV.plate_num}</td>
-    			<td style="text-align: center;">${iV.load_weight}</td>
-    			<td style="text-align: center;">${iV.car_length}</td>		
+    			<td style="text-align: center;">${iV.time}</td>		
+    			<td style="text-align: center;">查看详情</td>
+   			</tr>
+    		</c:forEach>
+    		</table>
+    	</div>
+    </div>
+     <div id="user_rbt"><font style="padding-right: 10px;">已到达订单</font></div>
+     <div>
+     
+    		<table style="width:100%">
+    		<tr>
+    			<td style="width:25%;text-align: center;">订单号</td>
+    			<td style="width:25%;text-align: center;">运货车主ID</td>
+    			<td style="width:15%;text-align: center;">运货车主电话</td>
+    			<td style="width:15%;text-align: center;">起始地</td>
+    			<td style="width:10%;text-align: center;">卸货地</td>		
+    			<td style="width:10%;text-align: center;">订单时间</td>
+    		</tr>
+    		<c:forEach items="${selectArrive}" var="iV">
+    		<tr>
+   				<td style="text-align: center;">${iV.id}</td>
+    			<td style="text-align: center;">${iV.Cid}</td>
+    			<td style="text-align: center;">${iV.Cphone}</td>
+    			<td style="text-align: center;">${iV.origin_place}</td>
+    			<td style="text-align: center;">${iV.destination}</td>
+    			<td style="text-align: center;">${iV.time}</td>		
     			<td style="text-align: center;">查看详情</td>
    			</tr>
     		</c:forEach>

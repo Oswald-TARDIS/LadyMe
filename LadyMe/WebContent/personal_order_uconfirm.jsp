@@ -32,7 +32,7 @@
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now style="float:right;">会员中心</div></a>
 </div>
 <c:if test="${empty selectUncofirm}">
-<c:redirect url="SendController?action=getGoodPage&page=1"/>
+<c:redirect url="OrderController?action=selectUncofirm"/>
 </c:if>
 <div id=whole>
 <div id=left>
