@@ -36,7 +36,7 @@ public class OrderService {
 			List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.unconfirm);
 			session.setAttribute("selectUncofirm", li);
 		}
-		response.sendRedirect("UCorder.jsp");
+		response.sendRedirect("personal_order_uconfirm.jsp");
 	}
 	
 	//查询进行中认订单
@@ -52,7 +52,7 @@ public class OrderService {
 			List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.running);
 			session.setAttribute("selectRunning", li);
 		}
-		response.sendRedirect("UCorder.jsp");
+		response.sendRedirect("personal_order_running.jsp");
 	}
 		
 		//查询到达目的地订单
@@ -68,7 +68,7 @@ public class OrderService {
 				List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.arrive);
 				session.setAttribute("selectArrive", li);
 			}
-			response.sendRedirect("UCorder.jsp");
+			response.sendRedirect("personal_order_running.jsp");
 		}
 		
 		//查询已签收订单
@@ -84,7 +84,7 @@ public class OrderService {
 				List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.done);
 				session.setAttribute("selectDone", li);
 			}
-			response.sendRedirect("UCorder.jsp");
+			response.sendRedirect("personal_order_done.jsp");
 		}
 
 }

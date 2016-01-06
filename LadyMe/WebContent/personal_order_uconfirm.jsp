@@ -31,6 +31,9 @@
 	<a href=UserController?action=logout class=guide_ahref><div id=div_guide_right>注销</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now style="float:right;">会员中心</div></a>
 </div>
+<c:if test="${empty selectUncofirm}">
+<c:redirect url="SendController?action=getGoodPage&page=1"/>
+</c:if>
 <div id=whole>
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
