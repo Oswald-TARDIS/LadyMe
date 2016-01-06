@@ -25,7 +25,7 @@
 <title>LadyMe</title>
 </head>
 <c:if test="${empty goodPage}">
-<c:redirect url="SendController?action=getGood&page=1"/>
+<c:redirect url="SendController?action=getGoodPage&page=1"/>
 </c:if>
 <body id=body_main>
 	<div id=div_head>
@@ -70,7 +70,7 @@
     			<td style="text-align: center;">${iS.destination}</td>
     			<td style="text-align: center;">${iS.good_type}</td>
     			<td style="text-align: center;">${iS.time}</td>
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;"><a href="SendController?action=getGood&id=${iS.id}">查看详情</a></td>
    			</tr>
     		</c:forEach>
     		</table>

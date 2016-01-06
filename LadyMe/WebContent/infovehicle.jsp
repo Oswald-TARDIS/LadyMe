@@ -24,8 +24,8 @@
 <script type="text/javascript" src="js/script.js"></script>
 <title>LadyMe</title>
 </head>
-<c:if test="${empty vehiclePage}">
-<c:redirect url="SendController?action=getVehiclePage&page=1"/>
+<c:if test="${empty infoVehicle}">
+	<c:redirect url="SendController?action=getVehicle&id=1" />
 </c:if>
 <body id=body_main>
 	<div id=div_head>
@@ -50,30 +50,70 @@
 			</div>
 		</div>
 	</div>
-	<div id=div_info style="position: relative; bottom: 1px;">
+	<div id=div_info style="position: relative; bottom: 1px;height: 100%;">
 		<div style="width: 2%; height: 38px; float: left; background: #ec9640"></div>
 		<font class=font_title style="text-align: left;">车源中心</font> <font
 			style="color: #aaa;">Center of Vehicle</font>
 		<hr noshade size=1 align=center width=100% color="#ec9640">
-		<table style="width: 100%">
+		<table width="866" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;"
+			class="user_ta">
 			<tr>
-				<td style="width: 25%; text-align: center;">始发地</td>
-				<td style="width: 25%; text-align: center;">目的地</td>
-				<td style="width: 15%; text-align: center;">车牌号</td>
-				<td style="width: 15%; text-align: center;">承重/吨</td>
-				<td style="width: 10%; text-align: center;">车长/米</td>
-				<td style="width: 10%; text-align: center;">操作</td>
+				<td width="128" height="45" align="right">发车人ID：</td>
+				<td>${infoVehicle.userID}</td>
+				<td width="141">&nbsp;</td>
 			</tr>
-			<c:forEach items="${vehiclePage}" var="iV">
-				<tr>
-					<td style="text-align: center;">${iV.origin_place}</td>
-					<td style="text-align: center;">${iV.destination}</td>
-					<td style="text-align: center;">${iV.plate_num}</td>
-					<td style="text-align: center;">${iV.load_weight}</td>
-					<td style="text-align: center;">${iV.car_length}</td>
-					<td style="text-align: center;"><a href="SendController?action=getVehicle&id=${iV.id}">查看详情</a></td>
-				</tr>
-			</c:forEach>
+			<tr>
+				<td width="128" height="45" align="right">装货地址：</td>
+				<td>${infoVehicle.origin_place}</td>
+				<td width="141">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="128" height="45" align="right">卸货地址：</td>
+				<td>${infoVehicle.destination}</td>
+				<td width="141">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="128" height="45" align="right">电话：</td>
+				<td>${infoVehicle.phone}</td>
+				<td width="186" height="45">&nbsp;</td>
+				<td width="141">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="128" height="45" align="right">车牌号：</td>
+				<td>${infoVehicle.plate_num}</td>
+				<td width="186" height="45">&nbsp;</td>
+				<td width="141">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="128" height="45" align="right">承重：</td>
+				<td>${infoVehicle.load_weight}</td>
+				<td width="116" height="45" align="left"><strong>吨</strong></td>
+
+			</tr>
+			<tr>
+				<td width="128" height="45" align="right">车型：</td>
+				<td>${infoVehicle.car_type}</td></tr><tr>
+				<td height="45" colspan="1" align="right">车长：</td>
+				<td>${infoVehicle.car_length}</td>
+				<td width="141">&nbsp;米</td>
+			</tr>
+			<tr>
+				<td width="128" height="92" align="right">留言：</td>
+				<td>${infoVehicle.message}</td>
+				<td width="141">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="128" height="92" align="right">车源发布时间：</td>
+				<td>${infoVehicle.time}</td>
+				<td width="141">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="128" height="45">&nbsp;</td>
+				<td width="204" height="45">&nbsp;</td>
+				<td height="45" colspan="2">&nbsp;</td>
+				<td width="186" height="45">&nbsp;</td>
+				<td width="141">&nbsp;</td>
+			</tr>
 		</table>
 	</div>
 	<div id=bottom>

@@ -84,7 +84,7 @@
     			<td style="text-align: center;">${iS.destination}</td>
     			<td style="text-align: center;">${iS.good_type}</td>
     			<td style="text-align: center;">${iS.time}</td>
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;"><a href="SendController?action=getGood&id=${iS.id}">查看详情</a></td>
    			</tr>
     		</c:forEach>
     		</table>
@@ -112,7 +112,7 @@
     			<td style="text-align: center;">${iV.plate_num}</td>
     			<td style="text-align: center;">${iV.load_weight}</td>
     			<td style="text-align: center;">${iV.car_length}</td>		
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;"><a href="SendController?action=getVehicle&id=${iV.id}">查看详情</a></td>
    			</tr>
     		</c:forEach>
     		</table>

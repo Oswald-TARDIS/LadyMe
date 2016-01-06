@@ -1,6 +1,7 @@
 package com.oswald.ladyme.service;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLData;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -97,7 +98,7 @@ public class SendService {
 		response.sendRedirect("sendgood_success.jsp");
 	}
 
-	public void getVehicle() throws SQLException, IOException {
+	public void getVehiclePage() throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		int page=Integer.valueOf(request.getParameter("page"));
 		List<VehicleShow> li=svdi.queryForList(pageSize*(page-1), pageSize);
@@ -105,12 +106,37 @@ public class SendService {
 		session.setAttribute("vehiclePage", li);
 		response.sendRedirect("showvehicle.jsp");
 	}
-	public void getGood() throws SQLException, IOException {
+	public void getGoodPage() throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		int page=Integer.valueOf(request.getParameter("page"));
 		List<GoodsShow> li=sgdi.queryForList(pageSize*(page-1), pageSize);
 		HttpSession session=request.getSession();
 		session.setAttribute("goodPage", li);
 		response.sendRedirect("showgoods.jsp");
+	}
+	
+	public void getGood() throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		int id=Integer.parseInt(request.getParameter("id"));
+		Goods g=sgdi.query(id);
+		HttpSession session=request.getSession();
+		session.setAttribute("infoGood", g);
+		if(g==null){
+			response.sendRedirect("error.jsp");
+			return;
+		}
+		response.sendRedirect("infogood.jsp");
+	}
+	public void getVehicle() throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		int id=Integer.parseInt(request.getParameter("id"));
+		Vehicle v=svdi.query(id);
+		HttpSession session=request.getSession();
+		session.setAttribute("infoVehicle", v);
+		if(v==null){
+			response.sendRedirect("error.jsp");
+			return;
+		}
+		response.sendRedirect("infovehicle.jsp");
 	}
 }

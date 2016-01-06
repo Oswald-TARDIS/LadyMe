@@ -49,10 +49,31 @@ public class GoodDaoImpl extends BaseDaoImpl{
 			s.setPrice(rs.getFloat("price"));
 			s.setMessage(rs.getString("message"));
 			s.setTime(rs.getString("time"));
-			
+			s.setUserID(id);
 			li.add(s);
 		}
 		return li;
+	}
+	public Goods query(int id) throws SQLException{
+		ResultSet rs=super.query("id", id);
+		if(rs.next()){
+			Goods g=new Goods();
+			g.setCar_length(rs.getFloat("car_length"));
+			g.setCar_type(rs.getString("car_type"));
+			g.setDestination(rs.getString("destination"));
+			g.setGood_type(rs.getString("good_type"));
+			g.setGood_weight(rs.getFloat("good_weight"));
+			g.setId(id);
+			g.setMessage(rs.getString("message"));
+			g.setOrigin_place(rs.getString("origin_place"));
+			g.setPhone(rs.getString("phone"));
+			g.setPrice(rs.getFloat("price"));
+			g.setTime(rs.getString("time"));
+			g.setUserID(rs.getString("userID"));
+			return g;
+			}
+		return null;
+		
 	}
 	
 }
