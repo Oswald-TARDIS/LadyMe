@@ -70,13 +70,13 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>电话：</td>
-    <td height="45" colspan="3"><input name="phone" type="text" class="u3" id="textfield3" value="请填写" /></td>
+    <td height="45" colspan="3"><input name="phone" type="text" class="u3" id="textfield3" placeholder="请填写" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>车牌号：</td>
-    <td height="45" colspan="3"><input name="plate_num" type="text" class="u3" id="textfield3" value="请填写" /></td>
+    <td height="45" colspan="3"><input name="plate_num" type="text" class="u3" id="textfield3" placeholder="请填写" /></td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
@@ -89,7 +89,7 @@
   </tr>
   <tr>
     <td width="128" height="45" align="right"><span>*</span>承重：</td>
-    <td width="204" height="45"><input name="load_weight" type="text" class="u4" id="textfield5" value="请填写" /></td>
+    <td width="204" height="45"><input name="load_weight" type="text" class="u4" id="textfield5" placeholder="请填写" /></td>
     <td width="116" height="45" align="left"><strong>吨</strong></td>
      
   </tr>

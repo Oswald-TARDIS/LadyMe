@@ -64,6 +64,8 @@ public class SendController extends HttpServlet {
 			flag = 6;
 		if (action.equals("getGood"))
 			flag = 7;
+		if (action.equals("queryallV"))
+			flag = 8;
 		try {
 			switch (flag) {
 			case 0:
@@ -89,6 +91,9 @@ public class SendController extends HttpServlet {
 				break;
 			case 7:
 				service.getGood();
+				break;
+			case 8:
+				service.queryallV();
 				break;
 			default:
 

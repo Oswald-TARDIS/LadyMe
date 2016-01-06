@@ -114,6 +114,7 @@
 				<td width="186" height="45">&nbsp;</td>
 				<td width="141">&nbsp;</td>
 			</tr>
+			<tr><td colspan="5"><hr noshade size=3 align=center width=100% color="#3169ee"></td></tr>
 		</table>
 	</div>
 	<div id=bottom>

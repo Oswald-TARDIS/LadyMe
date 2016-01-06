@@ -86,7 +86,7 @@ public class SendService {
 		vehicle.setDestination((String)request.getParameter("destination"));
 		vehicle.setPlate_num((String)request.getParameter("plate_num"));
 		vehicle.setPhone((String)request.getParameter("phone"));
-		vehicle.setLoad_weight(Float.parseFloat(request.getParameter("phone")));
+		vehicle.setLoad_weight(Float.parseFloat((String)request.getParameter("load_weight")));
 		vehicle.setCar_type((String)request.getParameter("car_type"));
 		vehicle.setCar_length(Float.parseFloat((String)request.getParameter("car_length")));
 		vehicle.setMessage((String)request.getParameter("message"));
@@ -138,5 +138,16 @@ public class SendService {
 			return;
 		}
 		response.sendRedirect("infovehicle.jsp");
+	}
+
+	public void queryallV() throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		List<Vehicle>li =new ArrayList<>();
+		HttpSession session=request.getSession();
+		User user=(User) session.getAttribute("user");
+		li=svdi.queryallForList(user.getID());
+		System.out.println(user.getID());
+		session.setAttribute("queryallV", li);
+		response.sendRedirect("personal_vehicleshow.jsp");
 	}
 }
