@@ -27,8 +27,7 @@ public class OrderDaoImpl extends BaseDaoImpl{
 			n.setCid(rs.getString("Cid"));
 			n.setCphone(rs.getString("Cphone"));
 			n.setOrigin_place(rs.getString("origin_place"));
-			n.setDestin( rs.getString("destination"));
-			
+			n.setDestination( rs.getString("destination"));
             n.setTime(rs.getString("time"));            
             n.setFlag(rs.getString("flag"));	
 			li.add(n);
@@ -41,10 +40,10 @@ public class OrderDaoImpl extends BaseDaoImpl{
 		while (rs.next()) {
 			Order n = new Order();
 			n.setId(rs.getInt("id"));
-			n.setHId(rs.getString("Hid"));
+			n.setHid(rs.getString("Hid"));
 			n.setHphone(rs.getString("Hphone"));
 			n.setOrigin_place(rs.getString("origin_place"));
-			n.setDestin( rs.getString("destination"));
+			n.setDestination( rs.getString("destination"));
             n.setTime(rs.getString("time"));            
             n.setFlag(rs.getString("flag"));	
 			li.add(n);

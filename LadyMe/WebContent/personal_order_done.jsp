@@ -61,6 +61,7 @@
     <div id="user_rbt"><font style="padding-right: 10px;">历史订单</font></div>
      <div>
      
+    		<c:if test="${user.type==0}">
     		<table style="width:100%">
     		<tr>
     			<td style="width:25%;text-align: center;">订单号</td>
@@ -73,8 +74,8 @@
     		<c:forEach items="${selectDone}" var="iV">
     		<tr>
    				<td style="text-align: center;">${iV.id}</td>
-    			<td style="text-align: center;">${iV.Cid}</td>
-    			<td style="text-align: center;">${iV.Cphone}</td>
+    			<td style="text-align: center;">${iV.cid}</td>
+    			<td style="text-align: center;">${iV.cphone}</td>
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
     			<td style="text-align: center;">${iV.time}</td>		
@@ -82,6 +83,30 @@
    			</tr>
     		</c:forEach>
     		</table>
+    	</c:if>
+    	<c:if test="${user.type==1}">
+    		<table style="width:100%">
+    		<tr>
+    			<td style="width:25%;text-align: center;">订单号</td>
+    			<td style="width:25%;text-align: center;">货主ID</td>
+    			<td style="width:15%;text-align: center;">货主电话</td>
+    			<td style="width:15%;text-align: center;">起始地</td>
+    			<td style="width:10%;text-align: center;">卸货地</td>		
+    			<td style="width:10%;text-align: center;">订单时间</td>
+    		</tr>
+    		<c:forEach items="${selectDone}" var="iV">
+    		<tr>
+   				<td style="text-align: center;">${iV.id}</td>
+    			<td style="text-align: center;">${iV.hid}</td>
+    			<td style="text-align: center;">${iV.hphone}</td>
+    			<td style="text-align: center;">${iV.origin_place}</td>
+    			<td style="text-align: center;">${iV.destination}</td>
+    			<td style="text-align: center;">${iV.time}</td>		
+    			<td style="text-align: center;">查看详情</td>
+   			</tr>
+    		</c:forEach>
+    		</table>
+    	</c:if>
     	</div>
     </div>
   </div>
