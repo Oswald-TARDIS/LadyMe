@@ -22,7 +22,7 @@
 <c:if test="${empty coNews||empty inNews}">
 <c:redirect url="NewsController?action=query"/>
 </c:if>
-<c:if test="${empty infoSupply||empty infoVehicle}">
+<c:if test="${empty infoSupply||empty infoVehicles}">
 <c:redirect url="SendController?action=query"/>
 </c:if>
 <c:if test="${user!=null}">
@@ -105,7 +105,7 @@
     			<td style="width:10%;text-align: center;">车长/米</td>		
     			<td style="width:10%;text-align: center;">操作</td>
     		</tr>
-    		<c:forEach items="${infoVehicle}" var="iV">
+    		<c:forEach items="${infoVehicles}" var="iV">
     		<tr>
    				<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
@@ -150,20 +150,6 @@
     		</div>
     	</c:forEach>
     </div>
-    </div>
-    
-    <div id=div_logis>
-    	<div id=>
-    		
-    	</div>
-    		
-    	<div id=>
-    		
-    	</div>
-    	
-    	<div id=>
-    		
-    	</div>
     </div>
     </div>
     <div id=bottom>

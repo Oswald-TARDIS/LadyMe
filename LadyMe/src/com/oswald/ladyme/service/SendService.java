@@ -46,7 +46,7 @@ public class SendService {
 		li2 = svdi.queryForList(0, 7);
 		li = sgdi.queryForList(0, 7);
 		application.setAttribute("infoSupply", li);
-		application.setAttribute("infoVehicle", li2);
+		application.setAttribute("infoVehicles", li2);
 		response.sendRedirect("index.jsp");
 	}
 	public void queryall() throws SQLException, IOException{
