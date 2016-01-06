@@ -13,63 +13,78 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import com.oswald.ladyme.bean.CUser;
-import com.oswald.ladyme.bean.Corder;
 import com.oswald.ladyme.bean.HUser;
-import com.oswald.ladyme.bean.Horder;
+import com.oswald.ladyme.bean.Order;
 import com.oswald.ladyme.bean.User;
-import com.oswald.ladyme.dao.CorderDaoImpl;
 import com.oswald.ladyme.dao.CuserDaoImpl;
-import com.oswald.ladyme.dao.HorderDaoImpl;
+import com.oswald.ladyme.dao.OrderDaoImpl;
 import com.oswald.ladyme.dao.HuserDaoImpl;
 import com.oswald.ladyme.tools.DataBase;
 
 public class OrderService {
-	public final static String uconfirm = "uconfirm";
-	public final static String running = "running";
-	public final static String done = "done";
 	
-	public void selectUC(HttpServletRequest request, HttpServletResponse response) throws SQLException  {
+	//查询未确认订单
+	public void selectUncofirm(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException  {
 		HttpSession session=request.getSession();
 		User user=(User) session.getAttribute("user");
-		HorderDaoImpl hdi=new HorderDaoImpl();
-		CorderDaoImpl cdi=new CorderDaoImpl();
+		OrderDaoImpl Odi=new OrderDaoImpl();
 		if(user.getType()==User.CLIENT){
-			List<Horder> li=hdi.queryForList(uconfirm);
-			session.setAttribute("selectResult", li);
+			List<Order> li=Odi.queryHForList("flag",OrderDaoImpl.unconfirm);
+			session.setAttribute("selectUncofirm", li);
 		}
 		if(user.getType()==User.DRIVER){
-			List<Corder> li=cdi.queryForList(uconfirm);
-			session.setAttribute("selectResult", li);
+			List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.unconfirm);
+			session.setAttribute("selectUncofirm", li);
 		}
-	}
-	public void selectRunning(HttpServletRequest request, HttpServletResponse response) throws SQLException  {
-		HttpSession session=request.getSession();
-		User user=(User) session.getAttribute("user");
-		HorderDaoImpl hdi=new HorderDaoImpl();
-		CorderDaoImpl cdi=new CorderDaoImpl();
-		if(user.getType()==User.CLIENT){
-			List<Horder> li=hdi.queryForList(running);
-			session.setAttribute("selectResult", li);
-		}
-		if(user.getType()==User.DRIVER){
-			List<Corder> li=cdi.queryForList(running);
-			session.setAttribute("selectResult", li);
-		}
-	}
-	public void selectDone(HttpServletRequest request, HttpServletResponse response) throws SQLException  {
-		HttpSession session=request.getSession();
-		User user=(User) session.getAttribute("user");
-		HorderDaoImpl hdi=new HorderDaoImpl();
-		CorderDaoImpl cdi=new CorderDaoImpl();
-		if(user.getType()==User.CLIENT){
-			List<Horder> li=hdi.queryForList(done);
-			session.setAttribute("selectResult", li);
-		}
-		if(user.getType()==User.DRIVER){
-			List<Corder> li=cdi.queryForList(done);
-			session.setAttribute("selectResult", li);
-		}
+		response.sendRedirect("UCorder.jsp");
 	}
 	
+	//查询进行中认订单
+	public void selectRunning(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException  {
+		HttpSession session=request.getSession();
+		User user=(User) session.getAttribute("user");
+		OrderDaoImpl Odi=new OrderDaoImpl();
+		if(user.getType()==User.CLIENT){
+			List<Order> li=Odi.queryHForList("flag",OrderDaoImpl.running);
+			session.setAttribute("selectRunning", li);
+		}
+		if(user.getType()==User.DRIVER){
+			List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.running);
+			session.setAttribute("selectRunning", li);
+		}
+		response.sendRedirect("UCorder.jsp");
+	}
+		
+		//查询到达目的地订单
+		public void selectArrive(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException  {
+			HttpSession session=request.getSession();
+			User user=(User) session.getAttribute("user");
+			OrderDaoImpl Odi=new OrderDaoImpl();
+			if(user.getType()==User.CLIENT){
+				List<Order> li=Odi.queryHForList("flag",OrderDaoImpl.arrive);
+				session.setAttribute("selectArrive", li);
+			}
+			if(user.getType()==User.DRIVER){
+				List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.arrive);
+				session.setAttribute("selectArrive", li);
+			}
+			response.sendRedirect("UCorder.jsp");
+		}
+		
+		//查询已签收订单
+		public void selectDone(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException  {
+			HttpSession session=request.getSession();
+			User user=(User) session.getAttribute("user");
+			OrderDaoImpl Odi=new OrderDaoImpl();
+			if(user.getType()==User.CLIENT){
+				List<Order> li=Odi.queryHForList("flag",OrderDaoImpl.done);
+				session.setAttribute("selectDone", li);
+			}
+			if(user.getType()==User.DRIVER){
+				List<Order> li=Odi.queryCForList("flag",OrderDaoImpl.done);
+				session.setAttribute("selectDone", li);
+			}
+			response.sendRedirect("UCorder.jsp");
+		}
 
 }

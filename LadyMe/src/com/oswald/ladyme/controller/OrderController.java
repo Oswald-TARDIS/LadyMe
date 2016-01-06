@@ -64,9 +64,13 @@ public class OrderController extends HttpServlet{
 		System.out.println(action);
 		try {
 			OrderService service = new OrderService();
-		if (action.equals("selectUC")) service.selectUC(request, response);
-		if (action.equals("selectRunning")) service.selectRunning(request, response);
-		if (action.equals("selectDone")) service.selectDone(request, response);
+		if (action.equals("selectUC")) service.selectUncofirm(request, response);
+		
+		
+		
+		
+		
+		
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
