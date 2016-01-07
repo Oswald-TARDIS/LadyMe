@@ -78,7 +78,14 @@
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
     			<td style="text-align: center;">${iV.time}</td>		
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;">
+    			<a href="OrderController?action=changeFlag&flag=1&id=${iV.id}">
+    			<input type="button" value="接受订单">
+    			</a></td>
+    			<td style="text-align: center;">
+    			<a href="OrderController?action=removeOrder&id=${iV.id}">
+    			<input type="button" value="拒绝订单">
+    			</a></td>
    			</tr>
     		</c:forEach>
     		</table>
@@ -101,7 +108,14 @@
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
     			<td style="text-align: center;">${iV.time}</td>		
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;">
+    			<a href="OrderController?action=changeFlag&flag=1&id=${iV.id}">
+    			<input type="button" value="接受订单">
+    			</a></td>
+    			<td style="text-align: center;">
+    			<a href="OrderController?action=removeOrder&id=${iV.id}">
+    			<input type="button" value="拒绝订单">
+    			</a></td>
    			</tr>
     		</c:forEach>
     		</table>

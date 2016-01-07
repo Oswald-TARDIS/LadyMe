@@ -66,10 +66,11 @@ public class OrderController extends HttpServlet{
 			OrderService service = new OrderService();
 		if (action.equals("selectUncofirm")) service.selectUncofirm(request, response);
 		if (action.equals("selectRunning")) service.selectRunning(request, response);
-		if (action.equals("selectArrive")) service.selectArrive(request, response);
 		if (action.equals("selectDone")) service.selectDone(request, response);
 		if(action.equals("createOrderG")) service.createOrderG(request, response);
 		if(action.equals("createOrderV")) service.createOrderV(request, response);
+		if(action.equals("changeFlag")) service.changeFlag(request, response);
+		if(action.equals("removeOrder")) service.removeOrder(request,response);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

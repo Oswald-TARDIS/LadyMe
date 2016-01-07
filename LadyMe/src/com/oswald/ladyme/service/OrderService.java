@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,8 +21,10 @@ import com.oswald.ladyme.bean.User;
 import com.oswald.ladyme.bean.Vehicle;
 import com.oswald.ladyme.dao.CpuserDaoImpl;
 import com.oswald.ladyme.dao.CuserDaoImpl;
+import com.oswald.ladyme.dao.GoodDaoImpl;
 import com.oswald.ladyme.dao.HpuserDaoImpl;
 import com.oswald.ladyme.dao.OrderDaoImpl;
+import com.oswald.ladyme.dao.VehicleDaoImpl;
 import com.oswald.ladyme.dao.HuserDaoImpl;
 import com.oswald.ladyme.tools.DataBase;
 
@@ -33,12 +36,19 @@ public class OrderService {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		OrderDaoImpl Odi = new OrderDaoImpl();
+		List<Order> li = new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
-			List<Order> li = Odi.queryHForList("flag", OrderDaoImpl.unconfirm);
+			li = Odi.queryHForList("flag", OrderDaoImpl.unconfirm);
 			session.setAttribute("selectUncofirm", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			List<Order> li = Odi.queryCForList("flag", OrderDaoImpl.unconfirm);
+			li = Odi.queryCForList("flag", OrderDaoImpl.unconfirm);
+			session.setAttribute("selectUncofirm", li);
+		}
+		if(li==null){
+			li=new ArrayList<>();
+			Order o=new Order();
+			li.add(o);
 			session.setAttribute("selectUncofirm", li);
 		}
 		response.sendRedirect("personal_order_uconfirm.jsp");
@@ -50,29 +60,33 @@ public class OrderService {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		OrderDaoImpl Odi = new OrderDaoImpl();
+		List<Order> li=new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
-			List<Order> li = Odi.queryHForList("flag", OrderDaoImpl.running);
+			li = Odi.queryHForList("flag", OrderDaoImpl.running);
 			session.setAttribute("selectRunning", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			List<Order> li = Odi.queryCForList("flag", OrderDaoImpl.running);
+			li = Odi.queryCForList("flag", OrderDaoImpl.running);
 			session.setAttribute("selectRunning", li);
 		}
-		response.sendRedirect("personal_order_running.jsp");
-	}
-
-	// 查询到达目的地订单
-	public void selectArrive(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException {
-		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute("user");
-		OrderDaoImpl Odi = new OrderDaoImpl();
+		if(li==null){
+			li=new ArrayList<>();
+			Order o=new Order();
+			li.add(o);
+			session.setAttribute("selectRunning", li);
+		}
 		if (user.getType() == User.CLIENT) {
-			List<Order> li = Odi.queryHForList("flag", OrderDaoImpl.arrive);
+			li = Odi.queryHForList("flag", OrderDaoImpl.arrive);
 			session.setAttribute("selectArrive", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			List<Order> li = Odi.queryCForList("flag", OrderDaoImpl.arrive);
+			li = Odi.queryCForList("flag", OrderDaoImpl.arrive);
+			session.setAttribute("selectArrive", li);
+		}
+		if(li==null){
+			li=new ArrayList<>();
+			Order o=new Order();
+			li.add(o);
 			session.setAttribute("selectArrive", li);
 		}
 		response.sendRedirect("personal_order_running.jsp");
@@ -83,12 +97,19 @@ public class OrderService {
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		OrderDaoImpl Odi = new OrderDaoImpl();
+		List<Order> li=new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
-			List<Order> li = Odi.queryHForList("flag", OrderDaoImpl.done);
+			li = Odi.queryHForList("flag", OrderDaoImpl.done);
 			session.setAttribute("selectDone", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			List<Order> li = Odi.queryCForList("flag", OrderDaoImpl.done);
+			li = Odi.queryCForList("flag", OrderDaoImpl.done);
+			session.setAttribute("selectDone", li);
+		}
+		if(li==null){
+			li=new ArrayList<>();
+			Order o=new Order();
+			li.add(o);
 			session.setAttribute("selectDone", li);
 		}
 		response.sendRedirect("personal_order_done.jsp");
@@ -113,6 +134,8 @@ public class OrderService {
 			o.setTime(g.getTime());
 			OrderDaoImpl odi=new OrderDaoImpl();
 			odi.insert(o);
+			GoodDaoImpl gdi=new GoodDaoImpl();
+			gdi.delete("id",g.getId());
 			response.sendRedirect("personal_order_uconfirm.jsp");
 		}else{
 			System.out.println("error");
@@ -141,6 +164,8 @@ public class OrderService {
 			o.setTime(g.getTime());
 			OrderDaoImpl odi=new OrderDaoImpl();
 			odi.insert(o);
+			VehicleDaoImpl vdi=new VehicleDaoImpl();
+			vdi.delete("id",g.getId());
 			response.sendRedirect("personal_order_uconfirm.jsp");
 		}else{
 			System.out.println("error");
@@ -148,5 +173,30 @@ public class OrderService {
 			response.sendRedirect("personal.jsp");
 		}
 		
+	}
+
+	public void changeFlag(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+		int flag=Integer.parseInt(request.getParameter("flag"));
+		int id=Integer.parseInt(request.getParameter("id"));
+		OrderDaoImpl odi=new OrderDaoImpl();
+		HashMap<String,Object> map=new HashMap<>();
+		map.put("flag", flag);
+		odi.update(map, "id", id);
+		if(flag==OrderDaoImpl.running||flag==OrderDaoImpl.arrive){
+			response.sendRedirect("OrderController?action=selectRunning");
+			return;
+		}
+		if(flag==OrderDaoImpl.done){
+			response.sendRedirect("OrderController?action=selectDone");
+			return;
+		}
+	}
+
+	public void removeOrder(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		int id=Integer.parseInt(request.getParameter("id"));
+		OrderDaoImpl odi=new OrderDaoImpl();
+		odi.delete("id", id);
 	}
 }

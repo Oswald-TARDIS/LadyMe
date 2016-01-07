@@ -34,9 +34,6 @@
 <c:if test="${empty selectRunning}">
 <c:redirect url="OrderController?action=selectRunning"/>
 </c:if>
-<c:if test="${empty selectArrive}">
-<c:redirect url="OrderController?action=selectArrive"/>
-</c:if>
 <div id=whole>
 <div id=left>
  <a href=""><div id=tou>我的物流</div></a>
@@ -81,7 +78,7 @@
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
     			<td style="text-align: center;">${iV.time}</td>		
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;">正在运送</td>
    			</tr>
     		</c:forEach>
     		<c:forEach items="${selectArrive}" var="iV">
@@ -91,8 +88,10 @@
     			<td style="text-align: center;">${iV.cphone}</td>
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
-    			<td style="text-align: center;">${iV.time}</td>		
-    			<td style="text-align: center;">确认收货</td>
+    			<td style="text-align: center;">${iV.time}</td>
+    			<td style="text-align: center;">
+    			<a href="OrderController?action=changeFlag&flag=3&id=${iV.id}">
+    			<input type="button" value="确认到货"></a></td>
    			</tr>
     		</c:forEach>
     		</table>
@@ -115,7 +114,10 @@
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
     			<td style="text-align: center;">${iV.time}</td>		
-    			<td style="text-align: center;">查看详情</td>
+    			<td style="text-align: center;">正在运送</td>
+    			<td style="text-align: center;">
+				<a href="OrderController?action=changeFlag&flag=2&id=${iV.id}">
+				<input type="button" value="我已经运到货了"></a></td>
    			</tr>
     		</c:forEach>
     		<c:forEach items="${selectArrive}" var="iV">
@@ -126,7 +128,8 @@
     			<td style="text-align: center;">${iV.origin_place}</td>
     			<td style="text-align: center;">${iV.destination}</td>
     			<td style="text-align: center;">${iV.time}</td>		
-    			<td style="text-align: center;">确认收货</td>
+				<td style="text-align: center;">
+				<input type="button" value="等待对方确认收货"></td>
    			</tr>
     		</c:forEach>
     		</table>
