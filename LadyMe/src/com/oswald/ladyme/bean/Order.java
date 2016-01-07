@@ -11,12 +11,11 @@ public class Order implements BaseBean {
 	String origin_place;
 	String destination;
 	String time;
-	String flag;
+	int flag;
 
 	@Override
 	public HashMap<String, Object> toMap() {
 		HashMap<String, Object> map = new HashMap<>();
-		map.put("id", id);
 		map.put("Cid", cid);
 		map.put("origin_place", origin_place);
 		map.put("destination", destination);
@@ -92,13 +91,12 @@ public class Order implements BaseBean {
 		this.time = time;
 	}
 
-	public String getFlag() {
+	public int getFlag() {
 		return flag;
 	}
 
-	public void setFlag(String flag) {
+	public void setFlag(int flag) {
 		this.flag = flag;
 	}
-	
 
 }

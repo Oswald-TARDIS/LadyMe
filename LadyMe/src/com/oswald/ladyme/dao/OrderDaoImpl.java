@@ -29,7 +29,7 @@ public class OrderDaoImpl extends BaseDaoImpl{
 			n.setOrigin_place(rs.getString("origin_place"));
 			n.setDestination( rs.getString("destination"));
             n.setTime(rs.getString("time"));            
-            n.setFlag(rs.getString("flag"));	
+            n.setFlag(rs.getInt("flag"));	
 			li.add(n);
 		}
 		return li;
@@ -45,7 +45,7 @@ public class OrderDaoImpl extends BaseDaoImpl{
 			n.setOrigin_place(rs.getString("origin_place"));
 			n.setDestination( rs.getString("destination"));
             n.setTime(rs.getString("time"));            
-            n.setFlag(rs.getString("flag"));	
+            n.setFlag(rs.getInt("flag"));	
 			li.add(n);
 		}
 		return li;

@@ -68,6 +68,8 @@ public class OrderController extends HttpServlet{
 		if (action.equals("selectRunning")) service.selectRunning(request, response);
 		if (action.equals("selectArrive")) service.selectArrive(request, response);
 		if (action.equals("selectDone")) service.selectDone(request, response);
+		if(action.equals("createOrderG")) service.createOrderG(request, response);
+		if(action.equals("createOrderV")) service.createOrderV(request, response);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

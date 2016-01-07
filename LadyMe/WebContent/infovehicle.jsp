@@ -108,11 +108,8 @@
 				<td width="141">&nbsp;</td>
 			</tr>
 			<tr>
-				<td width="128" height="45">&nbsp;</td>
-				<td width="204" height="45">&nbsp;</td>
-				<td height="45" colspan="2">&nbsp;</td>
-				<td width="186" height="45">&nbsp;</td>
-				<td width="141">&nbsp;</td>
+				<td></td>
+				<td width="141" colspan="4"><a href="OrderController?action=createOrderV"><input type="button" onclick="" value="我要用车"></a></td>
 			</tr>
 			<tr><td colspan="5"><hr noshade size=3 align=center width=100% color="#3169ee"></td></tr>
 		</table>
