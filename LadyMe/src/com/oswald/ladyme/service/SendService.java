@@ -13,6 +13,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.oswald.ladyme.bean.News;
 import com.oswald.ladyme.bean.User;
@@ -47,15 +48,17 @@ public class SendService {
 		li = sgdi.queryForList(0, 7);
 		application.setAttribute("infoSupply", li);
 		application.setAttribute("infoVehicles", li2);
+		HttpSession session=request.getSession();
+		session.setAttribute("indexQueryed", 1);
 		response.sendRedirect("index.jsp");
 	}
 	public void queryall() throws SQLException, IOException{
 		List<Goods>li =new ArrayList<>();
-		
 		HttpSession session=request.getSession();
 		User user=(User) session.getAttribute("user");
 		li=sgdi.queryallForList(user.getID());
 		session.setAttribute("queryall", li);
+		session.setAttribute("GoodsQueryed", 1);
 		response.sendRedirect("personal_goodshow.jsp");
 	}
 	public void insert() throws IOException {
@@ -104,6 +107,7 @@ public class SendService {
 		List<VehicleShow> li=svdi.queryForList(pageSize*(page-1), pageSize);
 		HttpSession session=request.getSession();
 		session.setAttribute("vehiclePage", li);
+		session.setAttribute("vehiclePageQueryed", 1);
 		response.sendRedirect("showvehicle.jsp");
 	}
 	public void getGoodPage() throws SQLException, IOException {
@@ -112,6 +116,7 @@ public class SendService {
 		List<GoodsShow> li=sgdi.queryForList(pageSize*(page-1), pageSize);
 		HttpSession session=request.getSession();
 		session.setAttribute("goodPage", li);
+		session.setAttribute("goodPageQueryed", 1);
 		response.sendRedirect("showgoods.jsp");
 	}
 	
@@ -121,6 +126,7 @@ public class SendService {
 		Goods g=sgdi.query(id);
 		HttpSession session=request.getSession();
 		session.setAttribute("infoGood", g);
+		session.setAttribute("infoGoodQueryed", 1);
 		if(g==null){
 			response.sendRedirect("error.jsp");
 			return;
@@ -133,6 +139,7 @@ public class SendService {
 		Vehicle v=svdi.query(id);
 		HttpSession session=request.getSession();
 		session.setAttribute("infoVehicle", v);
+		session.setAttribute("infoVehicleQueryed", 1);
 		if(v==null){
 			response.sendRedirect("error.jsp");
 			return;
@@ -148,6 +155,7 @@ public class SendService {
 		li=svdi.queryallForList(user.getID());
 		System.out.println(user.getID());
 		session.setAttribute("queryallV", li);
+		session.setAttribute("VehicleQueryed", 1);
 		response.sendRedirect("personal_vehicleshow.jsp");
 	}
 }

@@ -148,8 +148,7 @@ public class UserService {
 		CUserProve p=new CUserProve();
 		p.setID(id);
 		p.setSex(sex);
-		p.setPhoto(IDphoto);
-		p.setPhoto(IDphoto);
+		p.setPhoto(photo);
 		p.setIDphoto(IDphoto);
 		p.setIDnumber(IDnumber);
 		p.setPhone(phone);
@@ -157,7 +156,7 @@ public class UserService {
 		p.setOperateLicense(OperateLicense);
 		CpuserDaoImpl cpdi=new CpuserDaoImpl();
 		cpdi.insert(p);
-		response.sendRedirect("cuser_prove.jsp");
+		response.sendRedirect("personal.jsp");
 	}
 	
 	public void huser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
@@ -191,7 +190,7 @@ public class UserService {
 		p.setDrivingLicense(DrivingLicense);
 		HpuserDaoImpl hpdi=new HpuserDaoImpl();
 		hpdi.insert(p);
-		response.sendRedirect("huser_prove.jsp");
+		response.sendRedirect("personal.jsp");
 	}	
 
 }

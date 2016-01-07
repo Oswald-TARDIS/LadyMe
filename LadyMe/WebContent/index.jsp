@@ -19,18 +19,21 @@
 <title>LadyMe</title>
 </head>
 <body id=body_main>
-<c:if test="${empty coNews||empty inNews}">
-<c:redirect url="NewsController?action=query"/>
+<c:if test="${empty indexNewsQueryed}">
+<c:redirect url="NewsController?action=query"/> 
 </c:if>
-<c:if test="${empty infoSupply||empty infoVehicles}">
+<c:if test="${empty indexQueryed}">
 <c:redirect url="SendController?action=query"/>
 </c:if>
+<c:set var="indexQueryed" scope="session" /> 
+<c:set var="indexNewsQueryed" scope="session" /> 
 <c:if test="${user!=null}">
 <div id=div_head>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_now>首页</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>公司新闻</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>行业新闻</div></a>
-	<a href=index.jsp class=guide_ahref><div id=div_guide>供求信息</div></a>
+	<a href=SendController?action=getGoodPage&page=1 class=guide_ahref><div id=div_guide>货源信息</div></a>
+	<a href=SendController?action=getVehiclePage&page=1 class=guide_ahref><div id=div_guide>车源信息</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>
 		<img src="img/userIco/default.png" style="width:36px;height: 36px;float:left;margin-left:4px;margin-top:2px;"/>${user.name}

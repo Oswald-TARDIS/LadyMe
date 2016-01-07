@@ -38,19 +38,21 @@ public class OrderService {
 		OrderDaoImpl Odi = new OrderDaoImpl();
 		List<Order> li = new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
-			li = Odi.queryHForList("flag", OrderDaoImpl.unconfirm);
+			li = Odi.queryHForList(user.getID(), OrderDaoImpl.unconfirmG);
 			session.setAttribute("selectUncofirm", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			li = Odi.queryCForList("flag", OrderDaoImpl.unconfirm);
+			li = Odi.queryCForList(user.getID(), OrderDaoImpl.unconfirmV);
 			session.setAttribute("selectUncofirm", li);
 		}
 		if(li==null){
 			li=new ArrayList<>();
 			Order o=new Order();
+			o.setOrigin_place("查询结果为空");
 			li.add(o);
 			session.setAttribute("selectUncofirm", li);
 		}
+		session.setAttribute("selectUncofirmQueryed", 1);
 		response.sendRedirect("personal_order_uconfirm.jsp");
 	}
 
@@ -62,33 +64,36 @@ public class OrderService {
 		OrderDaoImpl Odi = new OrderDaoImpl();
 		List<Order> li=new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
-			li = Odi.queryHForList("flag", OrderDaoImpl.running);
+			li = Odi.queryHForList(user.getID(), OrderDaoImpl.running);
 			session.setAttribute("selectRunning", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			li = Odi.queryCForList("flag", OrderDaoImpl.running);
+			li = Odi.queryCForList(user.getID(), OrderDaoImpl.running);
 			session.setAttribute("selectRunning", li);
 		}
 		if(li==null){
 			li=new ArrayList<>();
 			Order o=new Order();
+			o.setOrigin_place("查询结果为空");
 			li.add(o);
 			session.setAttribute("selectRunning", li);
 		}
 		if (user.getType() == User.CLIENT) {
-			li = Odi.queryHForList("flag", OrderDaoImpl.arrive);
+			li = Odi.queryHForList(user.getID(), OrderDaoImpl.arrive);
 			session.setAttribute("selectArrive", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			li = Odi.queryCForList("flag", OrderDaoImpl.arrive);
+			li = Odi.queryCForList(user.getID(), OrderDaoImpl.arrive);
 			session.setAttribute("selectArrive", li);
 		}
 		if(li==null){
 			li=new ArrayList<>();
 			Order o=new Order();
+			o.setOrigin_place("查询结果为空");
 			li.add(o);
 			session.setAttribute("selectArrive", li);
 		}
+		session.setAttribute("selectRunningQueryed", 1);
 		response.sendRedirect("personal_order_running.jsp");
 	}
 
@@ -99,26 +104,28 @@ public class OrderService {
 		OrderDaoImpl Odi = new OrderDaoImpl();
 		List<Order> li=new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
-			li = Odi.queryHForList("flag", OrderDaoImpl.done);
+			li = Odi.queryHForList(user.getID(), OrderDaoImpl.done);
 			session.setAttribute("selectDone", li);
 		}
 		if (user.getType() == User.DRIVER) {
-			li = Odi.queryCForList("flag", OrderDaoImpl.done);
+			li = Odi.queryCForList(user.getID(), OrderDaoImpl.done);
 			session.setAttribute("selectDone", li);
 		}
 		if(li==null){
 			li=new ArrayList<>();
 			Order o=new Order();
+			o.setOrigin_place("查询结果为空");
 			li.add(o);
 			session.setAttribute("selectDone", li);
 		}
+		session.setAttribute("selectDoneQueryed", 1);
 		response.sendRedirect("personal_order_done.jsp");
 	}
 
 	public void createOrderG(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		HttpSession session=request.getSession();
 		Goods g=(Goods)session.getAttribute("infoGood");
-		User u=(User)session.getAttribute("User");
+		User u=(User)session.getAttribute("user");
 		CpuserDaoImpl cdi=new CpuserDaoImpl();
 		ResultSet rs=cdi.query("id", u.getID());
 		PrintWriter out=response.getWriter();
@@ -127,7 +134,7 @@ public class OrderService {
 			o.setCid(u.getID());
 			o.setCphone(rs.getString("phone"));
 			o.setDestination(g.getDestination());
-			o.setFlag(OrderDaoImpl.unconfirm);
+			o.setFlag(OrderDaoImpl.unconfirmG);
 			o.setHid(g.getUserID());
 			o.setHphone(g.getPhone());
 			o.setOrigin_place(g.getOrigin_place());
@@ -148,7 +155,7 @@ public class OrderService {
 	public void createOrderV(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		HttpSession session=request.getSession();
 		Vehicle g=(Vehicle)session.getAttribute("infoVehicle");
-		User u=(User)session.getAttribute("User");
+		User u=(User)session.getAttribute("user");
 		HpuserDaoImpl hdi=new HpuserDaoImpl();
 		ResultSet rs=hdi.query("id", u.getID());
 		PrintWriter out=response.getWriter();
@@ -157,7 +164,7 @@ public class OrderService {
 			o.setHid(u.getID());
 			o.setHphone(rs.getString("phone"));
 			o.setDestination(g.getDestination());
-			o.setFlag(OrderDaoImpl.unconfirm);
+			o.setFlag(OrderDaoImpl.unconfirmV);
 			o.setCid(g.getUserID());
 			o.setCphone(g.getPhone());
 			o.setOrigin_place(g.getOrigin_place());

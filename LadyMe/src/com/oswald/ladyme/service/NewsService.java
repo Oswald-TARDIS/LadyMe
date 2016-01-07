@@ -36,6 +36,8 @@ public class NewsService {
 		li = new ArrayList<News>();
 		li = csdi.queryForList(0, 7);
 		application.setAttribute("coNews", li);
+		HttpSession session=request.getSession();
+		session.setAttribute("indexNewsQueryed", 1);
 		response.sendRedirect("index.jsp");
 	}
 }

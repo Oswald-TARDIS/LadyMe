@@ -5,11 +5,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.sql.Connection;
+
+import java.sql.PreparedStatement;
 import com.oswald.ladyme.bean.Order;
 
 public class OrderDaoImpl extends BaseDaoImpl{
 	public final static String theTable = "orders";
-	public final static int unconfirm=0;
+	public final static int unconfirmG=-1;
+	public final static int unconfirmV=0;
 	public final static int running=1;
 	public final static int arrive=2;
 	public final static int done=3;
@@ -18,8 +22,13 @@ public class OrderDaoImpl extends BaseDaoImpl{
 		super(theTable);
 		// TODO Auto-generated constructor stub
 	}
-	public List<Order> queryHForList(String where,Object whereSet) throws SQLException {
-		ResultSet rs = super.query(where, whereSet);
+	public List<Order> queryHForList(String Hid,int flag) throws SQLException {
+		String sql="select * from "+theTable+" where Hid=? and flag=?";
+		Connection conn=db.getConnection();
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setString(1,Hid);
+		ps.setInt(2,flag);
+		ResultSet rs = ps.executeQuery();
 		List<Order> li = new ArrayList<>();
 		while (rs.next()) {
 			Order n = new Order();
@@ -34,8 +43,13 @@ public class OrderDaoImpl extends BaseDaoImpl{
 		}
 		return li;
 	}
-	public List<Order> queryCForList(String where,Object whereSet) throws SQLException {
-		ResultSet rs = super.query(where, whereSet);
+	public List<Order> queryCForList(String Cid,int flag) throws SQLException {
+		String sql="select * from "+theTable+" where Cid=? and flag=?";
+		Connection conn=db.getConnection();
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setString(1,Cid);
+		ps.setInt(2,flag);
+		ResultSet rs = ps.executeQuery();
 		List<Order> li = new ArrayList<>();
 		while (rs.next()) {
 			Order n = new Order();

@@ -24,7 +24,8 @@
 	<a href=index.jsp class=guide_ahref><div id=div_guide>首页</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>公司新闻</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>行业新闻</div></a>
-	<a href=index.jsp class=guide_ahref><div id=div_guide>供求信息</div></a>
+	<a href=SendController?action=getGoodPage&page=1 class=guide_ahref><div id=div_guide>货源信息</div></a>
+	<a href=SendController?action=getVehiclePage&page=1 class=guide_ahref><div id=div_guide>车源信息</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a>
 	<a href=index.jsp class=guide_ahref><div id=div_guide_right>
 	<img src="img/userIco/default.png" style="width:36px;height: 36px;float:left;margin-left:4px;margin-top:2px;"/>${user.name}
@@ -43,9 +44,9 @@
    <a href="sendvehicle.jsp"><div id=tou_li  >我要发车</div></a>
    <a href="SendController?action=queryallV"><div id=tou_li_now  >已发布车源</div></a>
 </c:if>
-<a href="personal_order_uconfirm.jsp"><div id=tou_li>待确认订单</div></a>
-<a href="personal_order_running.jsp"><div id=tou_li_now >进行中订单</div></a>
-<a href="personal_order_done.jsp"><div id=tou_li >历史订单</div></a>
+<a href="OrderController?action=selectUncofirm"><div id=tou_li>待确认订单</div></a>
+<a href="OrderController?action=selectRunning"><div id=tou_li>进行中订单</div></a>
+<a href="OrderController?action=selectDone"><div id=tou_li  >历史订单</div></a>
 <a href="#"><div id=tou >个人设置</div></a>
 <a href="personal.jsp"><div id=tou_li>会员认证</div></a>
 <a href="personal_password.jsp"><div id=tou_li >密码修改</div></a>
@@ -54,9 +55,10 @@
 <a href="#"><div id=tou_li >积分兑换</div></a>
 </div>
 <div id=div_x></div>
-<c:if test="${empty queryallV}">
+<c:if test="${empty VehicleQueryed}">
 	<c:redirect url="SendController?action=queryallV"/>
 </c:if>
+<c:set var="VehicleQueryed" scope="session" /> 
 <form action="SendController?action=queryallV" method="post">
 <!-- right -->
 <div id=right>

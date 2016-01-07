@@ -24,15 +24,16 @@
 <script type="text/javascript" src="js/script.js"></script>
 <title>LadyMe</title>
 </head>
-<c:if test="${empty goodPage}">
+<c:if test="${empty goodPageQueryed}">
 <c:redirect url="SendController?action=getGoodPage&page=1"/>
 </c:if>
+<c:set var="goodPageQueryed" scope="session" /> 
 <body id=body_main>
 	<div id=div_head>
 		<a href=index.jsp class=guide_ahref><div id=div_guide>首页</div></a> <a
 			href=index.jsp class=guide_ahref><div id=div_guide>公司新闻</div></a> <a
-			href=index.jsp class=guide_ahref><div id=div_guide>行业新闻</div></a> <a
-			href=index.jsp class=guide_ahref><div id=div_guide_now>供求信息</div></a>
+			href=index.jsp class=guide_ahref><div id=div_guide>行业新闻</div></a> <a href=SendController?action=getGoodPage&page=1 class=guide_ahref><div id=div_guide>货源信息</div></a>
+	<a href=SendController?action=getVehiclePage&page=1 class=guide_ahref><div id=div_guide>车源信息</div></a>
 		<a href=index.jsp class=guide_ahref><div id=div_guide>联系我们</div></a> <a
 			href=index.jsp class=guide_ahref><div id=div_guide_right>
 				<img src="img/userIco/default.png"
