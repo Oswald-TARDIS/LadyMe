@@ -136,12 +136,13 @@ public class SendService {
 	public void getVehicle() throws SQLException, IOException {
 		// TODO Auto-generated method stub
 		int id=Integer.parseInt(request.getParameter("id"));
+		System.out.println(id);
 		Vehicle v=svdi.query(id);
 		HttpSession session=request.getSession();
 		session.setAttribute("infoVehicle", v);
 		session.setAttribute("infoVehicleQueryed", 1);
 		if(v==null){
-			response.sendRedirect("error.jsp");
+			//response.sendRedirect("personal.jsp");
 			return;
 		}
 		response.sendRedirect("infovehicle.jsp");

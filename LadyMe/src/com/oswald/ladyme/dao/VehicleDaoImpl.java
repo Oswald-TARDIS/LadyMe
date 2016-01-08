@@ -53,6 +53,7 @@ public class VehicleDaoImpl extends BaseDaoImpl{
 	}
 	public Vehicle query(int id) throws SQLException{
 		ResultSet rs=super.query("id", id);
+		System.out.println(id);
 		if(rs.next()){
 			Vehicle s=new Vehicle();
 			s.setCar_length(rs.getFloat("car_length"));

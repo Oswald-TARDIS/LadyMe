@@ -137,6 +137,7 @@ public class UserService {
 	}
 
 	public void cuser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		HttpSession session=request.getSession();
 		String id=request.getParameter("id");
 		String sex = request.getParameter("sex");
 		String photo = request.getParameter("photo");
@@ -156,10 +157,12 @@ public class UserService {
 		p.setOperateLicense(OperateLicense);
 		CpuserDaoImpl cpdi=new CpuserDaoImpl();
 		cpdi.insert(p);
+		session.setAttribute("hasProved", 1);
 		response.sendRedirect("personal.jsp");
 	}
 	
 	public void huser_prove(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		HttpSession session=request.getSession();
 		String id=request.getParameter("id");
 		String sex = request.getParameter("sex");
 		String photo = request.getParameter("photo");
@@ -169,8 +172,8 @@ public class UserService {
 		String origin_place = request.getParameter("origin_place");
 		String car_type = request.getParameter("car_type");
 		String plate_num = request.getParameter("plate_num");
-		float load_weight = Float.valueOf(request.getParameter("load_weight"));
-		float car_length = Float.valueOf(request.getParameter("car_length"));
+		String load_weight =request.getParameter("load_weight");
+		String car_length = request.getParameter("car_length");
 		String DriverLicense = request.getParameter("DriverLicense");
 		String DrivingLicense = request.getParameter("DrivingLicense");
 		HUserProve p=new HUserProve();
@@ -190,6 +193,77 @@ public class UserService {
 		p.setDrivingLicense(DrivingLicense);
 		HpuserDaoImpl hpdi=new HpuserDaoImpl();
 		hpdi.insert(p);
+		session.setAttribute("hasProved", 1);
+		response.sendRedirect("personal.jsp");
+	}
+	public void changePasswd(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
+		User user=(User)session.getAttribute("user");
+		String ID=user.getID();
+		String passwd=(String)request.getParameter("passwd");
+		String passwd2=(String)request.getParameter("passwd2");
+		String passwd3=(String)request.getParameter("passwd3");
+		if(!passwd2.equals(passwd3)){
+			session.setAttribute("cpError", "两次输入密码不匹配");
+			response.sendRedirect("personal_password.jsp");
+			return;
+		}
+		if(user.getType()==User.CLIENT){
+			ResultSet rs=hdi.query("id", ID);
+			if(rs.next()){
+				if(rs.getString("passwd").equals(passwd)){
+					rs.close();
+					HashMap<String, Object> map=new HashMap<>();
+					map.put("passwd", passwd2);
+					hdi.update(map, "id", ID);
+					response.sendRedirect("personal_passwd_success.jsp");
+					return;
+				}else{
+					session.setAttribute("cpError", "原始密码不正确");
+					response.sendRedirect("personal_password.jsp");
+					return;
+				}
+			}
+		}else{
+			ResultSet rs=cdi.query("id", ID);
+			if(rs.next()){
+				if(rs.getString("passwd").equals(passwd)){
+					rs.close();
+					HashMap<String, Object> map=new HashMap<>();
+					map.put("passwd", passwd2);
+					cdi.update(map, "id", ID);
+					response.sendRedirect("personal_passwd_success.jsp");
+					return;
+				}else{
+					session.setAttribute("cpError", "原始密码不正确");
+					response.sendRedirect("personal_password.jsp");
+					return;
+				}
+			}
+		}
+	}
+	public void hasProved(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session=request.getSession();
+		User user=(User)session.getAttribute("user");
+		if(user.getType()==User.CLIENT){
+			HpuserDaoImpl hpdi=new HpuserDaoImpl();
+			ResultSet rs=hpdi.query("id", user.getID());
+			if(rs.next()){
+				session.setAttribute("hasProved", 1);
+			}else{
+				session.setAttribute("hasProved", 0);
+			}
+		}else{
+			CpuserDaoImpl cpdi=new CpuserDaoImpl();
+			ResultSet rs=cpdi.query("id", user.getID());
+			if(rs.next()){
+				session.setAttribute("hasProved", 1);
+			}else{
+				session.setAttribute("hasProved", 0);
+			}
+		}
 		response.sendRedirect("personal.jsp");
 	}	
 

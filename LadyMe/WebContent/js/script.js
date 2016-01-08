@@ -27,5 +27,8 @@ window.onload=init;
     		$("#error").html("<font style='font-size:10px;color:#ff9d6f'>密码不一致</p>");
     	}
     }
-
+    function changePW(){
+    	
+    }
+    
 

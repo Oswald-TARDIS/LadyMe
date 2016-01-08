@@ -72,7 +72,7 @@
     			<td style="width:10%;text-align: center;">卸货地</td>		
     			<td style="width:10%;text-align: center;">订单时间</td>
     		</tr>
-    		<c:forEach items="${selectUncofirm}" var="iV">
+    		<c:forEach items="${selectUncofirmG}" var="iV">
     		<tr>
    				<td style="text-align: center;">${iV.id}</td>
     			<td style="text-align: center;">${iV.cid}</td>
@@ -90,6 +90,19 @@
     			</a></td>
    			</tr>
     		</c:forEach>
+    		<c:forEach items="${selectUncofirmV}" var="iV">
+    		<tr>
+   				<td style="text-align: center;">${iV.id}</td>
+    			<td style="text-align: center;">${iV.cid}</td>
+    			<td style="text-align: center;">${iV.cphone}</td>
+    			<td style="text-align: center;">${iV.origin_place}</td>
+    			<td style="text-align: center;">${iV.destination}</td>
+    			<td style="text-align: center;">${iV.time}</td>		
+    			<td style="text-align: center;">
+    			等待对方接受
+    			</td>
+   			</tr>
+    		</c:forEach>
     		</table>
     	</c:if>
     	<c:if test="${user.type==1}">
@@ -102,7 +115,7 @@
     			<td style="width:10%;text-align: center;">卸货地</td>		
     			<td style="width:10%;text-align: center;">订单时间</td>
     		</tr>
-    		<c:forEach items="${selectUncofirm}" var="iV">
+    		<c:forEach items="${selectUncofirmV}" var="iV">
     		<tr>
    				<td style="text-align: center;">${iV.id}</td>
     			<td style="text-align: center;">${iV.hid}</td>
@@ -118,6 +131,19 @@
     			<a href="OrderController?action=removeOrder&id=${iV.id}">
     			<input type="button" value="拒绝订单">
     			</a></td>
+   			</tr>
+    		</c:forEach>
+    		<c:forEach items="${selectUncofirmG}" var="iV">
+    		<tr>
+   				<td style="text-align: center;">${iV.id}</td>
+    			<td style="text-align: center;">${iV.hid}</td>
+    			<td style="text-align: center;">${iV.hphone}</td>
+    			<td style="text-align: center;">${iV.origin_place}</td>
+    			<td style="text-align: center;">${iV.destination}</td>
+    			<td style="text-align: center;">${iV.time}</td>		
+    			<td style="text-align: center;">
+    			等待对方接受
+    			</td>
    			</tr>
     		</c:forEach>
     		</table>

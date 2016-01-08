@@ -16,6 +16,10 @@
 <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+<c:if test="${empty hasProved}">
+<c:redirect url="UserController?action=hasProved"/> 
+</c:if>
+
 <title>LadyMe</title>
 </head>
 <body id=body_main>
@@ -52,7 +56,6 @@
 <a href="#"><div id=tou_li >我的消息</div></a>
 <a href="#"><div id=tou_li >我的收藏</div></a>
 <a href="#"><div id=tou_li >积分兑换</div></a>
-  
 </div>
 <div id=div_x></div>
 <!-- right -->
@@ -86,6 +89,7 @@
 <div class="user_td">
 <span class="us_td_2"><img src="user_img/pic3.jpg" />认证成功可获得更多信用积分！</span>
 </div>
+<c:if test="${hasProved==0}">
 <c:if test="${user.type==1}">
    <h3>车主认证</h3>
    <form action="UserController?action=Cprove" method="post"name="">
@@ -104,6 +108,7 @@
 行车证：<input type="text" name="DrivingLicense" value=""/><br>
    <input type="submit" value="认证"/>
    <input type="reset" value="重置"/>
+   ${pError}${hasProved}
    </form>
 </c:if>
 <c:if test="${user.type==0}">
@@ -119,9 +124,16 @@
 营运证：<input type="text" name="OperateLicense" value=""/><br>
     <input type="submit" value="认证"/>
    <input type="reset" value="重置"/>
+   ${pError}${hasProved}
    </form>
+</c:if>
+</c:if>
+<c:if test="${hasProved==1}">
+  <P class="us_t1"><img src="img/tu1.png" />&nbsp;<font style="font-size: 30px;">认证成功!</font></P>
 </c:if>
      </div>
 </div>
+</div>
 </body>
+
 </html>

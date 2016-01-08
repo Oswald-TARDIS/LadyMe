@@ -72,6 +72,10 @@ public class UserController extends HttpServlet {
 				service.cuser_prove(request, response);
 			if(action.equals("Hprove"))
 				service.huser_prove(request, response);
+			if(action.equals("changePasswd"))
+				service.changePasswd(request, response);
+			if(action.equals("hasProved"))
+				service.hasProved(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

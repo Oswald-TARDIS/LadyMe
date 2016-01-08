@@ -37,20 +37,18 @@ public class OrderService {
 		User user = (User) session.getAttribute("user");
 		OrderDaoImpl Odi = new OrderDaoImpl();
 		List<Order> li = new ArrayList<>();
+		List<Order> li2 = new ArrayList<>();
 		if (user.getType() == User.CLIENT) {
 			li = Odi.queryHForList(user.getID(), OrderDaoImpl.unconfirmG);
-			session.setAttribute("selectUncofirm", li);
+			li2 = Odi.queryHForList(user.getID(), OrderDaoImpl.unconfirmV);
+			session.setAttribute("selectUncofirmG", li);
+			session.setAttribute("selectUncofirmV", li2);
 		}
 		if (user.getType() == User.DRIVER) {
 			li = Odi.queryCForList(user.getID(), OrderDaoImpl.unconfirmV);
-			session.setAttribute("selectUncofirm", li);
-		}
-		if(li==null){
-			li=new ArrayList<>();
-			Order o=new Order();
-			o.setOrigin_place("查询结果为空");
-			li.add(o);
-			session.setAttribute("selectUncofirm", li);
+			li2 = Odi.queryCForList(user.getID(), OrderDaoImpl.unconfirmG);
+			session.setAttribute("selectUncofirmV", li);
+			session.setAttribute("selectUncofirmG", li2);
 		}
 		session.setAttribute("selectUncofirmQueryed", 1);
 		response.sendRedirect("personal_order_uconfirm.jsp");
@@ -146,7 +144,7 @@ public class OrderService {
 			response.sendRedirect("personal_order_uconfirm.jsp");
 		}else{
 			System.out.println("error");
-			out.println("<script>alert('请先完善个人信息!')</script>");
+			session.setAttribute("pError","请先完善个人信息");
 			response.sendRedirect("personal.jsp");
 		}
 		
@@ -176,7 +174,7 @@ public class OrderService {
 			response.sendRedirect("personal_order_uconfirm.jsp");
 		}else{
 			System.out.println("error");
-			out.println("<script>alert('请先完善个人信息!')</script>");
+			session.setAttribute("pError","请先完善个人信息");
 			response.sendRedirect("personal.jsp");
 		}
 		

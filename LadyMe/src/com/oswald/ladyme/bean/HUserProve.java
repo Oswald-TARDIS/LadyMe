@@ -5,49 +5,48 @@ import java.util.HashMap;
 public class HUserProve extends UserProve implements BaseBean{
 	String car_type;
 	String plate_num;
-	float load_weight;
-	float car_length;
+	String load_weight;
+	String car_length;
 	String DrivingLicense;
 	String DriverLicense;
 
-	public float getLoad_weight() {
-		return load_weight;
-	}
-
-	public void setLoad_weight(float load_weight) {
-		this.load_weight = load_weight;
-	}
-
+	
 	public String getCar_type() {
 		return car_type;
 	}
+
 
 	public void setCar_type(String car_type) {
 		this.car_type = car_type;
 	}
 
+
 	public String getPlate_num() {
 		return plate_num;
 	}
+
 
 	public void setPlate_num(String plate_num) {
 		this.plate_num = plate_num;
 	}
 
-	public float getload_weight() {
+
+	public String getLoad_weight() {
 		return load_weight;
 	}
 
-	public void setload_weight(float load_weight) {
+
+	public void setLoad_weight(String load_weight) {
 		this.load_weight = load_weight;
 	}
 
 
-	public float getCar_length() {
+	public String getCar_length() {
 		return car_length;
 	}
 
-	public void setCar_length(float car_length) {
+
+	public void setCar_length(String car_length) {
 		this.car_length = car_length;
 	}
 
@@ -56,17 +55,21 @@ public class HUserProve extends UserProve implements BaseBean{
 		return DrivingLicense;
 	}
 
-	public void setDrivingLicense(String DrivingLicense) {
-		this.DrivingLicense = DrivingLicense;
+
+	public void setDrivingLicense(String drivingLicense) {
+		DrivingLicense = drivingLicense;
 	}
+
 
 	public String getDriverLicense() {
 		return DriverLicense;
 	}
 
-	public void setDriverLicense(String DriverLicense) {
-		this.DriverLicense = DriverLicense;
+
+	public void setDriverLicense(String driverLicense) {
+		DriverLicense = driverLicense;
 	}
+
 
 	public HashMap<String, Object> toMap() {
 		HashMap<String, Object> map = new HashMap<>();

@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
- 
+<script type="text/javascript" src="js/script.js"></script>
 <title>LadyMe</title>
 </head>
 <body id=body_main>
@@ -60,7 +60,9 @@
  
     <div id="user_rbt"><font style="padding-right: 10px;">密码修改</font></div>
      <div id=right_r>
+   
     <P style="height:50px; line-height:50px; font-size:20px; padding-left:10%;">为了您的账户安全，请牢记您的账号密码！</P>
+  <form action="UserController?action=changePasswd" method="post">
   <table class="user_ta">
   <tr>
     <td width="128"  height="45" align="right"><span>*</span>旧密码：</td>
@@ -76,19 +78,20 @@
   </tr>
   <tr>
     <td  height="45" align="right"><span>*</span>确认新密码：</td>
-    <td  height="45" align="left"><input  type="password" name="textfield" id="textfield" class="u3" /></td>
+    <td  height="45" align="left"><input  type="password" name="passwd3" id="textfield" class="u3" /></td>
     <td height="45">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td width="128" height="45">&nbsp;</td>
-    <td height="45"><input type="button" value="立刻认证" class="btn_1" /></td>
+    <td height="45"><input type="submit" value="立刻认证" class="btn_1""/></td>
+    <td>${cpError}</td>
     <td width="186" height="45">&nbsp;</td>
     <td width="141">&nbsp;</td>
   </tr>
   </table>   
-     
-     
+    
+     </form>
      
     </div>
   </div>

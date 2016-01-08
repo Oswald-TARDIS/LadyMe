@@ -24,7 +24,7 @@
 <script type="text/javascript" src="js/script.js"></script>
 <title>LadyMe</title>
 </head>
-<c:if test="${empty infoGoodQueryed}">
+<c:if test="${empty infoVehicleQueryed}">
 	<c:redirect url="SendController?action=getVehicle&id=1" />
 </c:if>
 <body id=body_main>
